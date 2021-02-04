@@ -4,7 +4,7 @@
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<title>Hello Gridea | Hi Aoian~</title>
+<title>## Andrid练习--仿QQ登录界面 | Hi Aoian~</title>
 
 <link rel="shortcut icon" href="https://aoianz.github.io//favicon.ico?v=1612424938784">
 
@@ -202,45 +202,116 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Hello Gridea
+                    ## Andrid练习--仿QQ登录界面
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2018-12-12 ·
+                        · 2021-02-04 ·
                     </time>
                     
-                        <a href="https://aoianz.github.io/tag/u4sGh3mPO/" class="post-tags">
-                            # Gridea
+                        <a href="https://aoianz.github.io/tag/wFZpTJOOV/" class="post-tags">
+                            # Android
                         </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+                    <p>效果图:</p>
+<figure data-type="image" tabindex="1"><img src="https://aoianz.github.io//post-images/1612424644565.jpg" alt="" loading="lazy"></figure>
+<p>源码:</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;RelativeLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:background=&quot;#E6E6E6&quot;
+    android:orientation=&quot;vertical&quot;&gt;
+    &lt;ImageView
+        android:id=&quot;@+id/iv&quot;
+        android:layout_width=&quot;70dp&quot;
+        android:layout_height=&quot;70dp&quot;
+        android:layout_centerHorizontal=&quot;true&quot;
+        android:layout_marginTop=&quot;60dp&quot;
+        android:background=&quot;@drawable/aoian&quot;/&gt;
+    &lt;LinearLayout
+        android:id=&quot;@+id/ll_number&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_below=&quot;@id/iv&quot;
+        android:layout_centerVertical=&quot;true&quot;
+        android:layout_marginBottom=&quot;5dp&quot;
+        android:layout_marginLeft=&quot;20dp&quot;
+        android:layout_marginRight=&quot;20dp&quot;
+        android:layout_marginTop=&quot;20dp&quot;
+        android:background=&quot;#ffffff&quot;&gt;
+        &lt;TextView
+            android:id=&quot;@+id/tv_number&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:padding=&quot;10dp&quot;
+            android:text=&quot;账号:&quot;
+            android:textColor=&quot;#000&quot;
+            android:textSize=&quot;20sp&quot;/&gt;
+        &lt;EditText
+            android:id=&quot;@+id/et_number&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            android:background=&quot;@null&quot;
+            android:padding=&quot;10dp&quot;/&gt;
+    &lt;/LinearLayout&gt;
+    &lt;LinearLayout
+        android:id=&quot;@+id/ll_password&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_below=&quot;@id/ll_number&quot;
+        android:layout_centerVertical=&quot;true&quot;
+        android:layout_marginLeft=&quot;20dp&quot;
+        android:layout_marginRight=&quot;20dp&quot;
+        android:background=&quot;#ffffff&quot;&gt;
+        &lt;TextView
+            android:id=&quot;@+id/tv_password&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:padding=&quot;10dp&quot;
+            android:text=&quot;密码:&quot;
+            android:textColor=&quot;#000&quot;
+            android:textSize=&quot;20sp&quot;/&gt;
+        &lt;EditText
+            android:id=&quot;@+id/et_password&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            android:layout_toRightOf=&quot;@id/tv_password&quot;
+            android:background=&quot;@null&quot;
+            android:inputType=&quot;textPassword&quot;
+            android:padding=&quot;10dp&quot;/&gt;
+    &lt;/LinearLayout&gt;
+    &lt;Button
+        android:id=&quot;@+id/btn_login&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_below=&quot;@id/ll_password&quot;
+        android:layout_marginLeft=&quot;20dp&quot;
+        android:layout_marginRight=&quot;20dp&quot;
+        android:layout_marginTop=&quot;50dp&quot;
+        android:background=&quot;#214EF3&quot;
+        android:text=&quot;登录&quot;
+        android:textColor=&quot;#ffffff&quot;
+        android:textSize=&quot;20sp&quot;/&gt;
+&lt;/RelativeLayout&gt;
+
+</code></pre>
 
                 </div>
             </article>
         </div>
 
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://aoianz.github.io/post/mysql/" class="post-title gt-a-link">
+                    朝花夕拾 Mysql
+                </a>
+            </div>
         
 
         
