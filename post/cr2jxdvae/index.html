@@ -6,7 +6,7 @@
 
 <title>JavaScript基础笔记 | Hi Aoian~</title>
 
-<link rel="shortcut icon" href="https://aoianz.github.io//favicon.ico?v=1613965310749">
+<link rel="shortcut icon" href="https://aoianz.github.io//favicon.ico?v=1615257942457">
 
 <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://aoianz.github.io//styles/main.css">
@@ -179,7 +179,7 @@
             
         </div>
         <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1613965310749"
+            <form id="gridea-search-form" style="position: relative" data-update="1615257942457"
                 action="/search/index.html">
                 <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
                 <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
@@ -216,11 +216,17 @@
 <h4 id="11初始javascript">1.1初始JavaScript</h4>
 <h5 id="javascript组成">JavaScript组成:</h5>
 <p>1.ECMAScript</p>
+<blockquote>
 <p><em>ECMAScript 是由ECMA 国际（ 原欧洲计算机制造商协会）进行标准化的一门编程语言，这种语言在万维网上应用广泛，它往往被称为 JavaScript 或 JScript，但实际上后两者是 ECMAScript 语言的实现和扩展</em></p>
+</blockquote>
 <p>2.DOM ——文档对象模型</p>
+<blockquote>
 <p><em>文档对象模型（Document Object Model，简称DOM），是W3C组织推荐的处理可扩展标记语言的标准编程接口。通过 DOM 提供的接口可以对页面上的各种元素进行操作（大小、位置、颜色等）</em></p>
+</blockquote>
 <p>3.BOM ——浏览器对象模型</p>
+<blockquote>
 <p>BOM (Browser Object Model，简称BOM) 是指浏览器对象模型，它提供了独立于内容的、可以与浏览器窗口进行互动的对象结构。通过BOM可以操作浏览器窗口，比如弹出框、控制浏览器跳转、获取分辨率等。</p>
+</blockquote>
 <h4 id="12-javascript注释">1.2 JavaScript注释</h4>
 <h5 id="1单行注释">1.单行注释</h5>
 <p>为了提高代码的可读性，JS与CSS一样，也提供了注释功能。JS中的注释主要有两种，分别是单行注释和多行注释。<br>
@@ -260,7 +266,9 @@
 </tr>
 </tbody>
 </table>
+<blockquote>
 <p><em>注意：alert() 主要用来显示消息给用户，console.log() 用来给程序员自己看运行时的消息,console.log()位置 F12 console</em></p>
+</blockquote>
 <pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 	&lt;head&gt;
@@ -285,15 +293,19 @@
 <pre><code class="language-javascript">//  声明变量  
 var age; //  声明一个 名称为age 的变量
 </code></pre>
+<blockquote>
 <p><em>var 是一个 JS关键字，用来声明变量( variable 变量的意思 )。使用该关键字声明变量后，计算机会自动为变量分配内存空间，不需要程序员管</em><br>
 <em>age 是程序员定义的变量名，我们要通过变量名来访问内存中分配的空间</em></p>
+</blockquote>
 <h5 id="2赋值">2.赋值</h5>
 <pre><code class="language-javascript">age = 20; // 给 age  这个变量赋值为 20
 </code></pre>
 <h5 id="3变量的初始化">3.变量的初始化</h5>
 <pre><code class="language-javascript">var age  = 20;  // 声明变量同时赋值为 20        
 </code></pre>
+<blockquote>
 <p><em>声明一个变量并赋值， 我们称之为变量的初始化</em></p>
+</blockquote>
 <p>案例:</p>
 <p>1.弹出一个输入框，提示用户输入姓名。<br>
 2.弹出一个对话框，输出用户刚才输入的姓名</p>
@@ -416,9 +428,11 @@ alert(Number.MIN_VALUE); // 5e-324
 alert(-Infinity); // -Infinity
 alert(NaN);       // NaN
 </code></pre>
+<blockquote>
 <p>Infinity ，代表无穷大，大于任何数值<br>
 -Infinity ，代表无穷小，小于任何数值<br>
 NaN ，Not a number，代表一个非数值</p>
+</blockquote>
 <h6 id="4isnan">4.isNaN()</h6>
 <p>用来判断一个变量是否为非数字的类型，返回 true 或者 false</p>
 <p>isNaN(x),如果x是数字,返回false,不是数字 返回true,	x是一个非数字类型</p>
@@ -715,6 +729,708 @@ console.log(Boolean(12)); // true
 </tr>
 </tbody>
 </table>
+<hr>
+<h3 id="6数组">6.数组</h3>
+<h4 id="61-创建数组">6.1 创建数组</h4>
+<h5 id="611-数组的创建方式">6.1.1 数组的创建方式</h5>
+<h6 id="1-利用-new-创建数组">1. 利用  new 创建数组</h6>
+<pre><code class="language-javascript">var 数组名 = new Array() ；
+var arr = new Array();   // 创建一个新的空数组
+</code></pre>
+<h6 id="2-利用数组字面量创建数组">2. 利用数组字面量创建数组</h6>
+<pre><code class="language-javascript">//1. 使用数组字面量方式创建空的数组
+var  数组名 = []；
+//2. 使用数组字面量方式创建带初始值的数组
+var  数组名 = ['小白','小 黑','大黄','瑞奇'];
+</code></pre>
+<blockquote>
+<p>数组的字面量是方括号 [ ]<br>
+声明数组并赋值称为数组的初始化<br>
+这种字面量方式也是我们以后最多使用的方式</p>
+</blockquote>
+<h5 id="612-数组元素的类型">6.1.2 数组元素的类型</h5>
+<p>数组中可以存放任意类型的数据，例如字符串，数字，布尔值等</p>
+<pre><code class="language-javascript">var arrStus = ['小白',12,true,28.9];
+</code></pre>
+<hr>
+<h4 id="62-获取数组元素">6.2 获取数组元素</h4>
+<h5 id="621-数组的索引">6.2.1 数组的索引</h5>
+<p>索引(下标):用来访问数组元素的序号(数组下标从0开始0)</p>
+<pre><code class="language-javascript">var arrStus = ['小白',12,true,28.9];
+索引(下标):		   0   1    2    3
+</code></pre>
+<p>数组可以通过<mark>索引</mark>来访问、设置、修改对应的数组元素，我们可以通过“<mark>数组名[索引]</mark>”的形式来获取数组中的元素</p>
+<pre><code class="language-javascript">// 定义数组
+var arrStus = [1,2,3];
+// 获取数组中的第2个元素
+alert(arrStus[1]); 
+</code></pre>
+<h4 id="63-遍历数组">6.3 遍历数组</h4>
+<p>问：数组中的每一项我们怎么取出来？<br>
+答：可以通过“数组名[索引号]”的方式一项项的取出来</p>
+<pre><code class="language-javascript">var arr = ['red','green', 'blue'];
+console.log(arr[0]) // red
+console.log(arr[1]) // green
+console.log(arr[2]) // blue
+</code></pre>
+<p>问：怎么把数组里面的元素全部取出来？</p>
+<p>答：从代码中我们可以发现，从数组中取出每一个元素时，代码是重复的，有所不一样的是索引值在递增     答案就是 <mark>循环</mark></p>
+<p><mark>遍历</mark>: 就是把数组中的每个元素从头到尾都访问一次（类似我们每天早上学生的点名）。<br>
+我们可以<mark>通过 for 循环索引遍历</mark><mark>数组</mark>中的每一项</p>
+<pre><code class="language-javascript">var arr = ['red','green', 'blue'];
+for(var i = 0; i &lt; arr.length; i++){
+    console.log(arrStus[i]);
+}
+</code></pre>
+<h5 id="631-数组的长度">6.3.1 数组的长度</h5>
+<p>使用“数组名.length”可以访问数组元素的数量(数组长度)</p>
+<pre><code class="language-javascript">var arrStus = [1,2,3];
+alert(arrStus.length);  // 3
+</code></pre>
+<blockquote>
+<p>注意：<br>
+1.此处数组的长度是数组元素的个数 ，不要和数组的索引号混淆。<br>
+2.当我们数组里面的元素个数发生了变化，这个 length 属性跟着一起变化。</p>
+</blockquote>
+<p>案例1:遍历数组</p>
+<p>请将  [“关羽”,“张飞”,“马超”,“赵云”,“黄忠”,“刘备”,“姜维”]; 数组里的元素依次打印到控制台</p>
+<pre><code class="language-javascript">var arr = [&quot;关羽&quot;,&quot;张飞&quot;,&quot;马超&quot;,&quot;赵云&quot;,&quot;黄忠&quot;,&quot;刘备&quot;,&quot;姜维&quot;]; 
+// 遍历  从第一个到最后一个
+for(var i = 0; i &lt; arr.length; i++ )  { 
+   console.log( arr[i] );
+} 
+</code></pre>
+<p>案例 2：数组求和及平均值</p>
+<p>求数组 [2,6,1,7, 4] 里面所有元素的和以及平均值</p>
+<blockquote>
+<p>分析:</p>
+<p>1.声明一个求和变量 sum。<br>
+2.遍历这个数组，把里面每个数组元素加到 sum 里面。<br>
+3.用求和变量 sum 除以数组的长度就可以得到数组的平均值。</p>
+</blockquote>
+<pre><code class="language-javascript">var arr = [2, 6, 1, 7, 4];
+var sum = 0;
+var average = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+    sum += arr[i];
+}
+average = sum / arr.length;
+console.log('这组数的和是：' + sum);
+console.log('这组数的平均值是：' + average);
+</code></pre>
+<p>案例3: 数组最大值</p>
+<p>求数组[2,6,1,77,52,25,7]中的最大值</p>
+<blockquote>
+<p>分析:</p>
+<p>1.声明一个保存最大元素的变量 max。<br>
+2.默认最大值可以取数组中的第一个元素。<br>
+3.遍历这个数组，把里面每个数组元素和 max 相比较。<br>
+4.如果这个数组元素大于max 就把这个数组元素存到 max 里面，否则继续下一轮比较。<br>
+5.最后输出这个 max。</p>
+</blockquote>
+<pre><code class="language-javascript">var arrNum = [2,6,1,77,52,25,7];
+var maxNum = arrNum[0]; // 用来保存最大元素,默认最大值是数组中的第一个元素
+// 从0 开始循环数组里的每个元素
+for(var i = 0;i&lt; arrNum.length; i++){
+    // 如果数组里当前循环的元素大于 maxNum，则保存这个元素和下标
+    if(arrNum[i] &gt; maxNum){
+        maxNum = arrNum[i]; // 保存数值到变量 maxNum
+    }
+}
+</code></pre>
+<p>案例4: 数组转换为字符串</p>
+<p>要求：将数组 ['red', 'green', 'blue', 'pink'] 里面的元素转换为字符串<br>
+输出： 'redgreenbluepink'</p>
+<blockquote>
+<p>分析:</p>
+<p>1.思路：就是把里面的元素相加就好了，但是注意保证是字符相加。<br>
+2.需要一个新变量 str 用于存放转换完的字符串。<br>
+3.遍历原来的数组，分别把里面数据取出来，加到字符串变量 str 里面。</p>
+</blockquote>
+<pre><code class="language-javascript">var arr = ['red', 'green', 'blue', 'pink'];
+var str = '';
+for (var i = 0; i &lt; arr.length; i++) {
+    str += arr[i];
+}
+console.log(str);
+</code></pre>
+<p>案例5: 数组转换为分割字符串</p>
+<p>要求：将数组 ['red', 'green', 'blue', 'pink'] 转换为字符串，并且用 | 或其他符号分割<br>
+输出： 'red|green|blue|pink'</p>
+<blockquote>
+<p>分析:</p>
+<p>1.需要一个新变量用于存放转换完的字符串 str。<br>
+2.遍历原来的数组，分别把里面数据取出来，加到字符串里面。<br>
+3.同时在后面多加一个分隔符。</p>
+</blockquote>
+<pre><code class="language-javascript">var arr = ['red', 'green', 'blue', 'pink'];
+var str = '';
+var separator = '|'
+for (var i = 0; i &lt; arr.length; i++) {
+   str += arr[i] + separator;
+}
+console.log(str);
+</code></pre>
+<hr>
+<h4 id="64数组中新增元素">6.4数组中新增元素</h4>
+<h5 id="641-通过修改-length-长度新增数组元素">6.4.1 通过修改 length 长度新增数组元素</h5>
+<p>可以通过修改 length 长度来实现数组扩容的目的<br>
+length 属性是可读写的</p>
+<pre><code class="language-javascript">var arr = ['red', 'green', 'blue', 'pink'];
+arr.length = 7;
+console.log(arr);
+console.log(arr[4]);
+console.log(arr[5]);
+console.log(arr[6]);
+</code></pre>
+<blockquote>
+<p>其中索引号是 4，5，6 的空间没有给值，就是声明变量未给值，默认值就是 undefined</p>
+</blockquote>
+<h5 id="642-通过修改数组索引新增数组元素">6.4.2  通过修改数组索引新增数组元素</h5>
+<p>可以通过修改数组索引的方式追加数组元素<br>
+不能直接给数组名赋值，否则会覆盖掉以前的数据</p>
+<pre><code class="language-javascript">var arr = ['red', 'green', 'blue', 'pink'];
+arr[4] = 'hotpink';
+console.log(arr);
+</code></pre>
+<p>案例1: 数组新增元素</p>
+<p>新建一个数组，里面存放10个整数（ 1~10）， 要求使用循环追加的方式输出： [1,2,3,4,5,6,7,8,9,10]</p>
+<blockquote>
+<p>分析:</p>
+<p>1.使用循环来追加数组。<br>
+2.声明一个空数组 arr。<br>
+3.循环中的计数器 i  可以作为数组元素存入。<br>
+4.由于数组的索引号是从0开始的， 因此计数器从 0 开始更合适，存入的数组元素要+1</p>
+</blockquote>
+<pre><code class="language-javascript">var arr = [];
+for (var i = 0; i &lt; 10; i++) {
+    arr[i] = i + 1;
+}
+console.log(arr);
+</code></pre>
+<p>案例 2：筛选数组</p>
+<p>要求：将数组 [2, 0, 6, 1, 77, 0, 52, 0, 25, 7] 中大于等于 10 的元素选出来，放入新数组</p>
+<blockquote>
+<p>分析:</p>
+<p>1.声明一个新的数组用于存放新数据。<br>
+2.遍历原来的数组，找出大于等于 10 的元素。<br>
+3.依次追加给新数组 newArr。</p>
+</blockquote>
+<pre><code class="language-javascript">//方法1:
+
+var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+var newArr = [];
+// 定义一个变量 用来计算 新数组的索引号
+var j = 0;
+for (var i = 0; i &lt; arr.length; i++) {
+    if (arr[i] &gt;= 10) {
+        // 给新数组
+        newArr[j] = arr[i];
+        // 索引号 不断自加
+        j++;
+    }
+}
+console.log(newArr);
+</code></pre>
+<pre><code class="language-javascript">//方法2:
+
+var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+var newArr = [];
+for (var i = 0; i &lt; arr.length; i++) {
+    if (arr[i] &gt;= 10) {
+        // 给新数组
+        newArr[newArr.length] = arr[i];
+    }
+}
+console.log(newArr);
+</code></pre>
+<hr>
+<h4 id="65-数组案例练习">6.5 数组案例练习</h4>
+<p>案例 1： 删除指定数组元素</p>
+<p>要求：将数组[2, 0, 6, 1, 77, 0, 52, 0, 25, 7]中的 0 去掉后，形成一个不包含 0 的新数组。</p>
+<p>需要一个新数组用于存放筛选之后的数据。<br>
+遍历原来的数组，把不是 0 的数据添加到新数组里面( 此时要注意采用数组名+索引的格式接收数据)。<br>
+新数组里面的个数，用 length 不断累加</p>
+<pre><code class="language-javascript">var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+var newArr = [];   // 空数组的默认的长度为 0 
+// 定义一个变量 i 用来计算新数组的索引号
+for (var i = 0; i &lt; arr.length; i++) {
+    // 找出大于 10 的数
+    if (arr[i] != 0) {
+        // 给新数组
+        // 每次存入一个值，newArr长度都会 +1  
+        newArr[newArr.length] = arr[i];
+    }
+}
+console.log(newArr);
+</code></pre>
+<p>案例 2： 翻转数组</p>
+<p>要求: 将数组 ['red', 'green', 'blue', 'pink', 'purple'] 的内容反过来存放。<br>
+输出： ['purple', 'pink', 'blue', 'green', 'red']</p>
+<pre><code class="language-javascript">var arr = ['red', 'green', 'blue', 'pink', 'purple'];
+var newArr = [];
+for (var i = 0; i &lt; arr.length; i++) {
+    // newArr 是接收方，arr 是输送方
+    newArr[i] = arr[arr.length - i - 1];
+}
+console.log(newArr);
+</code></pre>
+<p>案例 3： 数组排序（冒泡排序）</p>
+<p>要求：将数组 [5, 4, 3, 2, 1]中的元素按照从小到大的顺序排序，输出： 1，2，3，4，5</p>
+<pre><code class="language-javascript">   var arr = [5, 4, 3, 2, 1];
+        for (var i = 0; i &lt; arr.length - 1; i++) {
+            for (var j = 0; j &lt; arr.length - i - 1; j++) {
+                if (arr[j] &gt; arr[j + 1]) {
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+  console.log(arr);
+</code></pre>
+<hr>
+<h3 id="7-函数">7. 函数</h3>
+<h4 id="71-函数的概念">7.1 函数的概念</h4>
+<p>在 JS 里面，可能会定义非常多的相同代码或者功能相似的代码，这些代码可能需要大量重复使用。<br>
+虽然 for循环语句也能实现一些简单的重复操作，但是比较具有局限性，此时我们就可以使用 <mark>JS 中的函数</mark>。<br>
+<mark>函数</mark>：就是封装了一段<mark>可被重复调用执行的代码块</mark>。通过此代码块可以实现大量代码的重复使用。</p>
+<h4 id="72-函数的使用">7.2 函数的使用</h4>
+<p>函数在使用时分为两步：声明函数和调用函数。</p>
+<pre><code class="language-javascript">//1.声明函数
+function 函数名(){
+    //函数体
+}
+//-1.function是声明函数的关键字 全部小写
+//-2.函数是做某件事情,函数名一般是动词
+//-3.函数不调用自己不执行
+---------
+//2.调用函数
+    函数名();
+</code></pre>
+<pre><code class="language-javascript">function sayHi(){
+    console.log('hi...');
+}
+sayHi();
+</code></pre>
+<blockquote>
+<p>案例：利用函数计算1-100之间的累加和</p>
+</blockquote>
+<pre><code class="language-javascript">/* 
+   计算1-100之间值的函数
+*/
+// 声明函数
+function getSum(){
+  var sumNum = 0;// 准备一个变量，保存数字和
+  for (var i = 1; i &lt;= 100; i++) {
+    sumNum += i;// 把每个数值 都累加 到变量中
+  }
+  alert(sumNum);
+}
+// 调用函数
+getSum();
+</code></pre>
+<h4 id="73-函数的参数">7.3 函数的参数</h4>
+<h5 id="731形参和实参">7.3.1形参和实参</h5>
+<p>在声明函数时，可以在函数名称后面的小括号中添加一些参数，这些参数被称为形参，而在调用该函数时，同样也需要传递相应的参数，这些参数被称为实参。</p>
+<pre><code class="language-javascript">function 函数名(形参1,形参2,..){
+    //函数体;
+}
+函数名(实参1,实参2,...);
+---------------------------------------
+function cook(aru){
+    console.log(aru);
+}
+cook('酸辣土豆丝');
+cook('麻辣土豆丝');
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>形参</td>
+<td>形式上的参数 函数定义的时候传递的参数 当时并不知道是什么</td>
+</tr>
+<tr>
+<td>实参</td>
+<td>实际上的参数 函数调用的时候传递的参数 实参是传递给形参的</td>
+</tr>
+</tbody>
+</table>
+<p>==注意:==函数的参数可以有也可以没有,个数不限;</p>
+<blockquote>
+<p>案例1：利用函数求任意两个数的和</p>
+</blockquote>
+<pre><code class="language-javascript">function getSum(num1, num2) {
+    console.log(num1 + num2);
+}
+getSum(1, 3); // 4
+getSum(6, 5); // 11
+</code></pre>
+<blockquote>
+<p>案例2：利用函数求任意两个数之间的和</p>
+</blockquote>
+<pre><code class="language-javascript">function getSum(start,end){
+	var sum=0;
+	for(var i=start;i&lt;=end;i++)
+	{
+		sum += i;
+	}
+	console.log(sum);
+}
+	getSum(1,100);//5050
+</code></pre>
+<h5 id="732-函数参数的传递过程">7.3.2 函数参数的传递过程</h5>
+<pre><code class="language-javascript">// 声明函数
+function getSum(num1, num2) {
+    console.log(num1 + num2);
+}
+// 调用函数
+getSum(1, 3); // 4
+getSum(6, 5); // 11
+</code></pre>
+<ol>
+<li>
+<p>调用的时候实参值是传递给形参的</p>
+</li>
+<li>
+<p>形参简单理解为：不用声明的变量</p>
+</li>
+<li>
+<p>实参和形参的多个参数之间用逗号（,）分隔</p>
+</li>
+</ol>
+<h5 id="733-函数形参和实参个数不匹配问题">7.3.3 函数形参和实参个数不匹配问题</h5>
+<table>
+<thead>
+<tr>
+<th>参数个数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实参个数等于形参个数</td>
+<td style="text-align:left">输出正确结果</td>
+</tr>
+<tr>
+<td>实参个数多于形参个数</td>
+<td style="text-align:left">只取到形参的个数</td>
+</tr>
+<tr>
+<td>实参个数小于形参个数</td>
+<td style="text-align:left">多的形参定义为underfined,结果为NaN</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-javascript">function sum(num1, num2) {
+    console.log(num1 + num2);
+}
+sum(100, 200);             // 形参和实参个数相等，输出正确结果
+sum(100, 400, 500, 700);   // 实参个数多于形参，只取到形参的个数
+sum(200);                  // 实参个数少于形参，多的形参定义为undefined，结果为NaN
+</code></pre>
+<p>==注意：==在JavaScript中，形参的默认值是undefined。</p>
+<h4 id="74-函数的返回值">7.4 函数的返回值</h4>
+<h5 id="741-return-语句">7.4.1  return 语句</h5>
+<p>有的时候，我们会希望函数将值返回给调用者，此时通过使用 return 语句就可以实现。<br>
+return 语句的语法格式如下：</p>
+<pre><code class="language-javascript">// 声明函数
+function 函数名（）{
+    ...
+    return  需要返回的值；
+}
+// 调用函数
+函数名();    // 此时调用函数就可以得到函数体内return 后面的值
+</code></pre>
+<p>在使用 return 语句时，函数会停止执行，并返回指定的值<br>
+如果函数<mark>没有 return</mark> ，返回的值是 <mark>undefined</mark></p>
+<p>例如，声明了一个sum()函数，该函数的返回值为666，其代码如下：</p>
+<pre><code class="language-javascript">// 声明函数
+function sum(){
+	return 666;
+}
+	sum(); // 此时 sum 的值就等于666，因为 return 语句会把自身后面的值返回给调用者 
+	console.log(sum());
+</code></pre>
+<blockquote>
+<p>求任意两个数的和</p>
+</blockquote>
+<pre><code class="language-javascript">function getSum(num1,num2){
+    return num1+num2;
+}
+console.log(getSum(1,2));
+</code></pre>
+<blockquote>
+<p>案例 1：利用函数求任意两个数的最大值</p>
+</blockquote>
+<pre><code class="language-javascript">function getMax(num1, num2) {
+    return num1 &gt; num2 ? num1 : num2;
+}
+console.log(getMax(1, 2));
+console.log(getMax(11, 2));
+</code></pre>
+<blockquote>
+<p>案例 2：利用函数求任意一个数组中的最大值</p>
+</blockquote>
+<p>求数组 [5,2,99,101,67,77] 中的最大数值。</p>
+<pre><code class="language-javascript">//定义一个获取数组中最大数的函数
+function getMaxFromArr(numArray){
+    var maxNum = 0;
+    for(var i =0;i &lt; numArray.length;i++){
+        if(numArray[i] &gt; maxNum){
+            maxNum = numArray[i];
+        }
+    }
+    return maxNum;
+}
+var arrNum = [5,2,99,101,67,77];
+var maxN = getMaxFromArr(arrNum); // 这个实参是个数组
+alert('最大值为：'+ maxN);
+</code></pre>
+<h5 id="742-return-终止函数">7.4.2 return 终止函数</h5>
+<p>return 语句之后的代码不被执行</p>
+<pre><code class="language-javascript">function add(num1，num2){
+    //函数体
+    return num1 + num2; // 注意：return 后的代码不执行
+    alert('我不会被执行，因为前面有 return');
+}
+var resNum = add(21,6); // 调用函数，传入两个实参，并通过 resNum 接收函数返回值
+alert(resNum);          // 27
+</code></pre>
+<h5 id="743-return-的返回值">7.4.3  return 的返回值</h5>
+<p>return 只能返回一个值。如果用逗号隔开多个值，以最后一个为准</p>
+<pre><code class="language-javascript">function add(num1，num2){
+    //函数体
+    return num1，num2;
+}
+var resNum = add(21,6); // 调用函数，传入两个实参，并通过 resNum 接收函数返回值
+alert(resNum);          // 6
+</code></pre>
+<blockquote>
+<p>案例：创建一个函数，实现两个数之间的加减乘除运算，并将结果返回</p>
+</blockquote>
+<pre><code class="language-javascript">var a = parseFloat(prompt('请输入第一个数'));
+var b = parseFloat(prompt('请输入第二个数'));
+function count(a, b) {
+    var arr = [a + b, a - b, a * b, a / b];
+    return arr;
+}
+var result = count(a, b);
+console.log(result);
+</code></pre>
+<h5 id="744-函数没有-return-返回-undefined">7.4.4 函数没有 return 返回 undefined</h5>
+<p>函数都是有返回值的<br>
+1.如果有return 则返回 return 后面的值<br>
+2.如果没有return 则返回 undefined</p>
+<h5 id="745-break-continue-return-的区别">7.4.5 break ,continue ,return 的区别</h5>
+<p>break ：结束当前的循环体（如 for、while）<br>
+continue ：跳出本次循环，继续执行下次循环（如 for、while）<br>
+return ：不仅可以退出循环，还能够返回 return 语句中的值，同时还可以结束当前的函数体内的代码</p>
+<h4 id="75-arguments的使用">7.5 arguments的使用</h4>
+<p>当我们不确定有多少个参数传递的时候，可以用 <mark>arguments</mark> 来获取。在 JavaScript 中，arguments 实际上它是当前函数的一个<mark>内置对象</mark>。所有函数都内置了一个 arguments 对象，arguments 对象中<mark>存储了传递的所有实参</mark></p>
+<p><mark>arguments展示形式是一个伪数组</mark>，因此可以进行遍历</p>
+<pre><code class="language-javascript">function fn(){
+    console.log(arguments);//里面存储了所有传递过来的实参
+    console.log(arguments);
+    console.log(arguments[2]);
+}
+fn(1,2,3);
+fn(1,2,3,4,5);
+//伪数组 并不是真正意义上的数组
+//1.具有数组的length属性
+//2.按照索引的方式进行存储的
+//3.它没有真正数组的一些方法push , pop 等方法
+</code></pre>
+<blockquote>
+<p>案例利用函数求任意个数的最大值</p>
+</blockquote>
+<pre><code class="language-javascript">function maxValue() {
+      var max = arguments[0];
+      for (var i = 0; i &lt; arguments.length; i++) {
+         if (max &lt; arguments[i]) {
+                    max = arguments[i];
+         }
+      }
+      return max;
+}
+ console.log(maxValue(2, 4, 5, 9));
+ console.log(maxValue(12, 4, 9));
+</code></pre>
+<h4 id="76-函数案例">7.6 函数案例</h4>
+<blockquote>
+<p>案例 1： 利用函数封装方式，翻转任意一个数组</p>
+</blockquote>
+<pre><code class="language-javascript">function reverse(arr) {
+var newArr = [];
+for (var i = arr.length - 1; i &gt;= 0; i--) {
+newArr[newArr.length] = arr[i];
+}
+return newArr;
+}
+var arr1 = reverse([1, 3, 4, 6, 9]);
+console.log(arr1);
+var arr2 = reverse(['red','pink','blue']);
+console.log(arr2);
+</code></pre>
+<blockquote>
+<p>案例 2： 利用函数封装方式，对数组排序 -- 冒泡排序</p>
+</blockquote>
+<pre><code class="language-javascript">function sort(arr) {
+for (var i = 0; i &lt; arr.length - 1; i++) {
+	for (var j = 0; j &lt; arr.length - i - 1; j++) {
+		if (arr[j] &gt; arr[j + 1]) {
+			var temp = arr[j];
+			arr[j] = arr[j + 1];
+			arr[j + 1] = temp;
+		}
+	}
+}
+return arr;
+}
+var arr1=sort([11,7,22,99])
+console.log(arr1);
+</code></pre>
+<blockquote>
+<p>案例 3： 判断闰年</p>
+</blockquote>
+<p>要求：输入一个年份，判断是否是闰年（闰年：能被4整除并且不能被100整数，或者能被400整除）</p>
+<pre><code class="language-javascript">function isRun(year) {
+     var flag = false;
+     if (year % 4 === 0 &amp;&amp; year % 100 !== 0 || year % 400 === 0) {
+        flag = true;
+     }
+    return flag;
+}
+console.log(isRun(2010));
+console.log(isRun(2012));
+</code></pre>
+<h5 id="函数可以调用另外一个函数">函数可以调用另外一个函数</h5>
+<p>因为每个函数都是独立的代码块，用于完成特殊任务，因此经常会用到函数相互调用的情况</p>
+<pre><code class="language-javascript">function fn1() {
+  console.log(111);
+  fn2();
+  console.log('fn1');
+}
+function fn2() {
+  console.log(222);
+  console.log('fn2');
+}
+fn1();
+</code></pre>
+<blockquote>
+<p>案例 4： 用户输入年份，输出当前年份2月份的天数</p>
+</blockquote>
+<p>如果是闰年，则2月份是 29天， 如果是平年，则2月份是 28天</p>
+<pre><code class="language-javascript">function backDay() {
+	var year=prompt('请输入年份');
+	if(isRunYear(year)){//调用函数需要额外加小括号
+		alert('当前年份是闰年2月份有29天');
+	}
+	else{
+		alert('当前年份是平年2月份有28天');
+	}				
+}
+backDay();
+//判断是否为闰年
+function isRunYear(year){
+	//如果是闰年返回true,否则返回false
+	var flag=false;
+	if(year%4==0&amp;&amp;year%100!=0||year%400==0){
+		flag=true;
+	}
+	return flag;
+}
+</code></pre>
+<h4 id="77-函数的两种声明方式">7.7 函数的两种声明方式</h4>
+<h5 id="1自定义函数方式命名函数">1.自定义函数方式(命名函数)</h5>
+<p>利用函数关键字 function 自定义函数方式</p>
+<pre><code class="language-javascript">// 声明定义方式
+function fun() {...}
+// 调用  
+fun(); 
+</code></pre>
+<blockquote>
+<p>因为有名字，所以也被称为命名函数<br>
+调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面</p>
+</blockquote>
+<h5 id="2-函数表达式方式匿名函数">2.  函数表达式方式(匿名函数）</h5>
+<p>利用函数表达式方式的写法如下：</p>
+<pre><code class="language-javascript">// 这是函数表达式写法，匿名函数后面跟分号结束
+var 变量名 = function() {};
+var fun = function(){...}；
+// 调用的方式，函数调用必须写到函数体下面
+fun();
+</code></pre>
+<blockquote>
+<p>(1) fun是变量名不是函数名<br>
+(2)函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值而函数表达式里面存的是函数<br>
+(3) 函数表达式也可以进行传递参数</p>
+<p>因为函数没有名字，所以也被称为匿名函数<br>
+这个fun 里面存储的是一个函数<br>
+函数表达式方式原理跟声明变量方式是一致的<br>
+函数调用的代码必须写到函数体后面</p>
+</blockquote>
+<hr>
+<h3 id="8作用域">8.作用域</h3>
+<h4 id="81作用域">8.1作用域</h4>
+<h5 id="811作用域概述">8.1.1作用域概述</h5>
+<p>通常来说，一段程序代码中所用到的名字并不总是有效和可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域。作用域的使用提高了程序逻辑的局部性，增强了程序的可靠性，减少了名字冲突。</p>
+<p>JavaScript（es6前）中的作用域有两种：<br>
+全局作用域<br>
+局部作用域（函数作用域）</p>
+<p>全局作用域:作用于所有代码执行的环境(整个 script 标签内部)或者一个独立的 js 文件</p>
+<p>局部作用域 （函数作用域）:作用于函数内的代码环境，就是局部作用域。 因为跟函数有关系，所以也称为函数作用域</p>
+<h5 id="812-js没有块级作用域">8.1.2 JS没有块级作用域</h5>
+<p>块作用域由 { } 包括。<br>
+在其他编程语言中（如 java、c#等），在 if 语句、循环语句中创建的变量，仅仅只能在本 if 语句、本循环语句中使用，如下面的Java代码：</p>
+<pre><code class="language-javascript">if(true){
+  int num = 123;
+  system.out.print(num);  // 123
+}
+system.out.print(num);    // 报错
+</code></pre>
+<p>Js中没有块级作用域（在ES6之前）</p>
+<pre><code class="language-javascript">if(true){
+  var num = 123;
+  console.log(123); //123
+}
+console.log(123);   //123
+</code></pre>
+<h4 id="82变量的作用域">8.2变量的作用域</h4>
+<h5 id="821-变量作用域的分类">8.2.1 变量作用域的分类</h5>
+<p>在JavaScript中，根据作用域的不同，变量可以分为两种：<br>
+全局变量<br>
+局部变量</p>
+<h6 id="1全局变量">1.全局变量</h6>
+<p>在全局作用域下声明的变量叫做<mark>全局变量（在函数外部定义的变量）</mark>。</p>
+<blockquote>
+<p>全局变量在代码的任何位置都可以使用<br>
+在全局作用域下 var 声明的变量 是全局变量<br>
+特殊情况下，在函数内不使用 var 声明的变量也是全局变量（不建议使用）</p>
+</blockquote>
+<h6 id="2局部变量">2.局部变量</h6>
+<p>在局部作用域下声明的变量叫做<mark>局部变量（在函数内部定义的变量）</mark></p>
+<blockquote>
+<p>局部变量只能在该函数<mark>内部</mark>使用<br>
+在函数内部 var 声明的变量是局部变量<br>
+函数的<mark>形参</mark>实际上就是局部变量</p>
+</blockquote>
+<h5 id="822-全局变量和局部变量的区别">8.2.2 全局变量和局部变量的区别</h5>
+<p>全局变量：在任何一个地方都可以使用，只有在浏览器关闭时才会被销毁，因此比较占内存<br>
+局部变量：只在函数内部使用，当其所在的代码块被执行时，会被初始化；当代码块运行结束后，就会被销毁，因此更节省内存空间</p>
+<h4 id="83作用域链">8.3作用域链</h4>
+<ul>
+<li>只要是代码，就至少有一个作用域</li>
+<li>写在函数内部的局部作用域</li>
+<li>如果函数中还有函数，那么在这个作用域中就又可以诞生一个作用域</li>
+<li>根据在内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问，就称作作用域链</li>
+</ul>
 
                 </div>
             </article>
