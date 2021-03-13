@@ -1,41 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com</id>
+    <id>https://aoianz.github.io</id>
     <title>Hi Aoian~</title>
-    <updated>2021-03-12T10:26:13.036Z</updated>
+    <updated>2021-03-13T07:55:00.633Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com"/>
-    <link rel="self" href="https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/atom.xml"/>
+    <link rel="alternate" href="https://aoianz.github.io"/>
+    <link rel="self" href="https://aoianz.github.io/atom.xml"/>
     <subtitle>I am Aoian,This is my blog~
 Thank you for your visit.</subtitle>
-    <logo>https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/images/avatar.png</logo>
-    <icon>https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/favicon.ico</icon>
+    <logo>https://aoianz.github.io/images/avatar.png</logo>
+    <icon>https://aoianz.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Hi Aoian~</rights>
     <entry>
+        <title type="html"><![CDATA[Test]]></title>
+        <id>https://aoianz.github.io/post/zis0p6TBu/</id>
+        <link href="https://aoianz.github.io/post/zis0p6TBu/">
+        </link>
+        <updated>2021-03-12T13:57:19.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[新网址，新起点]]></title>
-        <id>https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/aoian/</id>
-        <link href="https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/aoian/">
+        <id>https://aoianz.github.io/post/aoian/</id>
+        <link href="https://aoianz.github.io/post/aoian/">
         </link>
         <updated>2021-03-09T14:03:14.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[JavaScript基础笔记]]></title>
-        <id>https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/cr2jxdvae/</id>
-        <link href="https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/cr2jxdvae/">
+        <id>https://aoianz.github.io/post/cr2jxdvae/</id>
+        <link href="https://aoianz.github.io/post/cr2jxdvae/">
         </link>
         <updated>2021-02-22T03:41:27.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Andrid练习--仿QQ登录界面]]></title>
-        <id>https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/6AiMOPdir/</id>
-        <link href="https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/6AiMOPdir/">
+        <id>https://aoianz.github.io/post/6AiMOPdir/</id>
+        <link href="https://aoianz.github.io/post/6AiMOPdir/">
         </link>
         <updated>2021-02-04T07:43:00.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[朝花夕拾 Mysql]]></title>
-        <id>https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/mysql/</id>
-        <link href="https://https://coding-pages-bucket-3535186-8453824-14244-530383-1302628896.cos-website.ap-hongkong.myqcloud.com/post/mysql/">
+        <id>https://aoianz.github.io/post/mysql/</id>
+        <link href="https://aoianz.github.io/post/mysql/">
         </link>
         <updated>2021-01-11T14:18:18.000Z</updated>
     </entry>
