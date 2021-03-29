@@ -2164,7 +2164,12 @@ p > code {
     }
     .head-top-line {
       background: #DBE8F6;
-    }
+    }.pace .pace-activity {
+        border-color: #DBE8F6 transparent transparent;
+      }
+      .pace .pace-activity:before {
+        border-color: #DBE8F6 transparent transparent;
+      }
     .brand {
       background: #DBE8F666;
     }
