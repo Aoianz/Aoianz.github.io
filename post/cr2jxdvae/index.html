@@ -1,225 +1,44 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico" type="image/x-icon" /><meta name="viewport"content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><meta name="apple-mobile-web-app-capable"content="yes"/><meta name="apple-mobile-web-app-status-bar-style"content="black"/><meta name="format-detection"content="telephone=no"/><meta name="renderer"content="webkit"><meta name="description"content="I am Aoian,This is my blog~
+Thank you for your visit."><meta charset="UTF-8"><title>JavaScript基础笔记 | Hi Aoian~</title>
+<link href="https://aoianz.github.io/styles/main.css" type="text/css" rel="stylesheet" /><link href="https://at.alicdn.com/t/font_1621793_zatzzgvf30g.css" type="text/css" rel="stylesheet" /><link rel="stylesheet" href="https://aoianz.github.io/media/css/katex.css"><script async src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.min.js"></script><script src="https://aoianz.github.io/media/js/magnify.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script type="text/javascript">function btn_toggle(){document.getElementById("hn").classList.contains("no-js")?document.getElementById("hn").classList.remove("no-js"):document.getElementById("hn").classList.add("no-js")}</script>
 
-<title>JavaScript基础笔记 | Hi Aoian~</title>
-
-<link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico?v=1633486366429">
-
-<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://aoianz.github.io/styles/main.css">
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"> -->
-
-<style>
-    hr {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-</style>
-
-<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
-<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script> -->
-<!-- DEMO JS -->
-<!--<script src="media/scripts/index.js"></script>-->
-
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+<link rel="canonical" href="https://aoianz.github.io/post/cr2jxdvae/" />
 </head>
 <body>
-<div class="main gt-bg-theme-color-first">
-    <style>
-    /* 导航栏样式 */
-    .navbar {
-        position: relative;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -ms-flex-align: center;
-        align-items: center;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
-    }
+<div class="progress"></div><style>.progress{background:linear-gradient(to right,#87ceeb var(--scroll),transparent 0);background-repeat:no-repeat;position:fixed;width:100%;height:4px;z-index:1}</style><div class="darkmode-background"></div><div class="darkmode-layer"></div>
+<noscript><p class="warn" >本页面需要浏览器支持（启用）JavaScript</p></noscript><div class="header"><div class="logo_title"><div class="title animated fadeInDown"><a href="https://aoianz.github.io"><img alt="logo" style="display:inline-block;" src="https://aoianz.github.io/images/avatar.png"/></a><h1 title="Hi Aoian~" class="weaklink"><a  href="/">Hi Aoian~</a></h1>
 
-    .navbar-brand {
-        display: inline-block;
-        padding-top: 0.3125rem;
-        padding-bottom: 0.3125rem;
-        margin-right: 1rem;
-        font-size: 1.25rem;
-        line-height: inherit;
-        white-space: nowrap;
-    }
+<style>.santa-body{float:left;margin:10.5px 7.5px 0px 0px;font-size:20px;color:#f91047;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;width:1em;height:1em;background-color:currentColor;-webkit-box-shadow:inset 0 -0.25em rgba(0,0,0,0.1);box-shadow:inset 0 -0.25em rgba(0,0,0,0.1);border-radius:50%;-webkit-transform-origin:center bottom;-ms-transform-origin:center bottom;transform-origin:center bottom;-webkit-animation:balance alternate infinite 2s ease-in-out;animation:balance alternate infinite 2s ease-in-out;}.santa-head{font-size:.4em;width:1em;height:1.9em;background-color:white;border-radius:.5em;-webkit-transform:translateY(-1em);-ms-transform:translateY(-1em);transform:translateY(-1em);position:relative;}.santa-head::before{content:'';width:1em;height:.375em;display:block;background-color:#ff9876;position:absolute;left:0;top:.65em;}.santa-ear{background-color:#fc8363;width:.1em;height:.3em;position:absolute;top:.75em;}.santa-ear:nth-of-type(1){border-radius:.05em 0 0 .05em;left:-0.1em;}.santa-ear:nth-of-type(2){border-radius:0 .05em .05em 0;right:-0.1em;}.santa-hat{content:'';width:1em;height:.15em;position:absolute;-webkit-transform:scale(1.1);-ms-transform:scale(1.1);transform:scale(1.1);top:.5em;left:0;background-color:white;}.santa-hat::before{content:'';display:block;width:1em;height:.5em;background:#f91047;border-radius:.5em .5em 0 0;z-index:2;position:absolute;top:-0.5em;}.santa-hat::after{content:'';width:.25em;height:.25em;display:block;background-color:white;border-radius:50%;position:absolute;z-index:0;top:-0.72em;right:0;-webkit-box-shadow:-0.2em .2em 0 .12em rgba(0,0,0,0.2),-0.2em .2em 0 .12em #f91047;box-shadow:-0.2em .2em 0 .12em rgba(0,0,0,0.2),-0.2em .2em 0 .12em #f91047;}.santa-eye{width:.12em;height:.12em;background-color:black;border-radius:50%;position:absolute;top:.76em;left:.2em;}.santa-eye + .santa-eye{left:auto;right:.2em;}.santa-nose{width:.12em;height:.22em;background-color:#f24c4c;border-radius:0 0 .12em .12em;position:absolute;top:.84em;left:50%;-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);}.santa-mouth{width:.18em;height:.1em;border-bottom-right-radius:5vw;border-bottom-left-radius:5vw;margin-top:.3em;background-color:black;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-animation:hohoho 4s linear forwards infinite;animation:hohoho 4s linear forwards infinite;}@-webkit-keyframes hohoho{0%,10%,20%,40%,100%{width:.18em;height:.1em;border-bottom-right-radius:1vw;border-bottom-left-radius:1vw;}5%,15%,25%,35%{width:.15em;height:.2em;border-radius:50%;}}@keyframes hohoho{0%,10%,20%,40%,100%{width:.18em;height:.1em;border-bottom-right-radius:1vw;border-bottom-left-radius:1vw;}5%,15%,25%,35%{width:.15em;height:.2em;border-radius:50%;}}@-webkit-keyframes balance{from{-webkit-transform:rotate(-4deg);transform:rotate(-4deg);}to{-webkit-transform:rotate(4deg);transform:rotate(4deg);}}@keyframes balance{from{-webkit-transform:rotate(-4deg);transform:rotate(-4deg);}to{-webkit-transform:rotate(4deg);transform:rotate(4deg);}}</style>
+<div class="santa"><div class="santa-body"><div class="santa-head"><div class="santa-ear"></div><div class="santa-ear"></div><div class="santa-hat"></div><div class="santa-eye"></div><div class="santa-eye"></div><div class="santa-nose"></div><div class="santa-mouth"></div></div></div></div>
 
-    .navbar-brand:hover,
-    .navbar-brand:focus {
-        text-decoration: none;
-    }
+<div class="navbar weaklink">
+<div class="normal_nav">
+<div class="bitcron_nav_container"><div class="bitcron_nav"><div class="bitcron_nav"><div style="display:flex;justify-content:center;"><nav class="mixed_site_nav_wrap site_nav_wrap"><ul class="mixed_site_nav site_nav sm sm-base">	<li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io" class="selected active current nav__item" >首页</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io/archives" class="selected active current nav__item" >归档</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io/tags" class="selected active current nav__item" >标签</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io/post/about" class="selected active current nav__item" >关于</a></li></ul></nav>
+<div style="float:right;margin-top:1em"><form id="gridea-search-form" data-update="1578893743252" action="/search/index.html"><input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="Search..."></form></div><div style="margin-left:0.5em;margin-top:1.2em"><input id="switch_default" onclick="mobileBtn()" type="checkbox" class="switch_default"><label for="switch_default" class="toggleBtn"></label></div></div>
+<div class="clear clear_nav_inline_end"></div></div></div><div class="clear clear_nav_end"></div></div></div><div class="hamberger" href="javascript:void(0)" onclick="btn_toggle();"><i class="iconfont icon-category"></i></div></div></div></div>
+<div id="hn" class="no-js hidden_nav animated fadeInDown"><div class="bitcron_nav_container"><div class="bitcron_nav"><nav class="mixed_site_nav_wrap site_nav_wrap"><ul class="mixed_site_nav site_nav sm sm-base">	<li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io" class="selected active current nav__item" >首页</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io/archives" class="selected active current nav__item" >归档</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io/tags" class="selected active current nav__item" >标签</a></li><li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://aoianz.github.io/post/about" class="selected active current nav__item" >关于</a></li></ul><div class="clear clear_nav_inline_end"></div></nav></div><div class="clear clear_nav_end"></div></div>
+<div style="display:flex;justify-content:center;inline-block;text-align:center;margin-top:7%"><div><form id="gridea-search-form" data-update="1633515956640" action="/search/index.html"><input class="search-input" autocomplete="off" spellcheck="false" name="q"  placeholder="Search..." /></form></div><div style="margin-left:0.5em"><input id="switch_default_h" onclick="mobileBtn()" type="checkbox" class="switch_default"><label for="switch_default" class="toggleBtn"></label></div></div>
+</div></div>
+<script>function enableDarkmode(){document.body.classList.add("darkmode"),document.getElementById("switch_default").checked=1,document.getElementById("switch_default_h").checked=1}function removeDarkmode(){document.body.classList.remove("darkmode"),document.getElementById("switch_default").checked=0,document.getElementById("switch_default_h").checked=0}function getCookie(a){var b,c=new RegExp("(^| )"+a+"=([^;]*)(;|$)");return(b=document.cookie.match(c))?unescape(b[2]):null}cookie=getCookie("darkmode"),"enable"==cookie&&enableDarkmode(),window.matchMedia("(prefers-color-scheme: dark)").matches&&"disable"!==cookie&&(enableDarkmode(),document.cookie="darkmode=enable; path=/");var mobileBtn=function(){1==document.getElementById("switch_default").checked?(enableDarkmode(),document.cookie="darkmode=enable; path=/"):(removeDarkmode(),document.cookie="darkmode=disable; path=/")};</script>
 
-    .navbar-nav {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        padding-left: 0;
-        margin-bottom: 0;
-        list-style: none;
-    }
+<style>.deng-box{position:fixed;top:-40px;left:-80px;z-index:9999}.deng-box1{position:fixed;top:-30px;left:-80px;z-index:9999}.deng-box1 .deng{position:relative;width:120px;height:90px;margin:50px;background:#d8000f;background:rgba(216,0,15,0.8);border-radius:50% 50%;-webkit-transform-origin:50% -100px;-webkit-animation:swing 5s infinite ease-in-out;box-shadow:-5px 5px 30px 4px rgba(252,144,61,1)}.deng{position:relative;width:120px;height:90px;margin:50px;background:#d8000f;background:rgba(216,0,15,0.8);border-radius:50% 50%;-webkit-transform-origin:50% -100px;-webkit-animation:swing 3s infinite ease-in-out;box-shadow:-5px 5px 50px 4px rgba(250,108,0,1)}.deng-a{width:100px;height:90px;background:#d8000f;background:rgba(216,0,15,0.1);margin:12px 8px 8px 8px;border-radius:50% 50%;border:2px solid #dc8f03}.deng-b{width:45px;height:90px;background:#d8000f;background:rgba(216,0,15,0.1);margin:-4px 8px 8px 26px;border-radius:50% 50%;border:2px solid #dc8f03}.xian{position:absolute;top:-20px;left:60px;width:2px;height:20px;background:#dc8f03}.shui-a{position:relative;width:5px;height:20px;margin:-5px 0 0 59px;-webkit-animation:swing 4s infinite ease-in-out;-webkit-transform-origin:50% -45px;background:#ffa500;border-radius:0 0 5px 5px}.shui-b{position:absolute;top:14px;left:-2px;width:10px;height:10px;background:#dc8f03;border-radius:50%}.shui-c{position:absolute;top:18px;left:-2px;width:10px;height:35px;background:#ffa500;border-radius:0 0 0 5px}.deng:before{position:absolute;top:-7px;left:29px;height:12px;width:60px;content:" ";display:block;z-index:999;border-radius:5px 5px 0 0;border:solid 1px #dc8f03;background:#ffa500;background:linear-gradient(to right,#dc8f03,#ffa500,#dc8f03,#ffa500,#dc8f03)}.deng:after{position:absolute;bottom:-7px;left:10px;height:12px;width:60px;content:" ";display:block;margin-left:20px;border-radius:0 0 5px 5px;border:solid 1px #dc8f03;background:#ffa500;background:linear-gradient(to right,#dc8f03,#ffa500,#dc8f03,#ffa500,#dc8f03)}.deng-t{font-family:华文行楷,Arial,Lucida Grande,Tahoma,sans-serif;color:#dc8f03;font-weight:bold;line-height:85px;text-align:center}.night .deng-t,.night .deng-box,.night .deng-box1{background:transparent !important}@-moz-keyframes swing{0%{-moz-transform:rotate(-10deg)}50%{-moz-transform:rotate(10deg)}100%{-moz-transform:rotate(-10deg)}}@-webkit-keyframes swing{0%{-webkit-transform:rotate(-10deg)}50%{-webkit-transform:rotate(10deg)}100%{-webkit-transform:rotate(-10deg)}}</style>
+<div class="deng-box"><div class="deng"><div class="xian"></div><div class="deng-a"><div class="deng-b"><div class="deng-t">节</div></div></div><div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div></div></div> <div class="deng-box1"><div class="deng"><div class="xian"></div><div class="deng-a"><div class="deng-b"><div class="deng-t">春节</div></div></div><div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div></div></div>
 
-    .navbar-collapse {
-        -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-        -ms-flex-positive: 1;
-        flex-grow: 1;
-        -ms-flex-align: center;
-        align-items: center;
-    }
+<div class="main"><div class="main-inner"><div class="content">
+<article class="post">
+<h2 class="post_title sm_margin"><a>JavaScript基础笔记</a></h2>
+<script>function lan(){if(document.getElementById("lan").innerText=="繁"){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s)}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://cdn.jsdelivr.net/gh/qyxtim/Static@1.1/bookmarklet_tw.js";s.id="tongwenlet_cn";document.body.appendChild(s);document.getElementById("lan").innerHTML="简"}else{if(document.getElementById("lan").innerText=="簡"){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s)}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://cdn.jsdelivr.net/gh/qyxtim/Static@1.1/bookmarklet_cn.js";s.id="tongwenlet_cn";document.body.appendChild(s);document.getElementById("lan").innerHTML="繁"}}};</script>
+<section class="post_details"><i class="iconfont icon-calendar"></i><span style="margin-right:15px"> 2021-02-22</span><i class="iconfont icon-browse"></i><span style="margin-right:15px"> <span id="busuanzi_value_page_pv"></span> Views</span><i class="iconfont icon-category"></i><span class="weaklink" style="margin-right:15px"></span><i class="iconfont icon-caret-down"></i><span style="margin-right:15px">8963字</span><i class="iconfont icon-naozhong"></i><span style="margin-right:15px">37 min read</span><a id="lan" href="javascript:void(0);"onclick="lan();"title="调整简繁体" style="margin-right:15px;">繁</a>
+</section>
 
-    .navbar-toggler {
-        padding: 0.25rem 0.75rem;
-        font-size: 1.25rem;
-        line-height: 1;
-        background-color: transparent;
-        border: 1px solid transparent;
-        border-radius: 0.25rem;
-    }
-
-    .navbar-toggler:hover,
-    .navbar-toggler:focus {
-        text-decoration: none;
-    }
-
-    @media (min-width: 992px) {
-        .navbar-expand-lg {
-            -ms-flex-flow: row nowrap;
-            flex-flow: row nowrap;
-            -ms-flex-pack: start;
-            justify-content: flex-start;
-        }
-
-        .navbar-expand-lg .navbar-nav {
-            -ms-flex-direction: row;
-            flex-direction: row;
-        }
-
-        .navbar-expand-lg .navbar-collapse {
-            display: -ms-flexbox !important;
-            display: flex !important;
-            -ms-flex-preferred-size: auto;
-            flex-basis: auto;
-        }
-
-        .navbar-expand-lg .navbar-toggler {
-            display: none;
-        }
-    }
-
-    @media (max-width: 991px) {
-        #navbarSupportedContent {
-            display: none;
-        }
-    }
-</style>
-<nav class="navbar navbar-expand-lg">
-    <div class="navbar-brand">
-        <img class="user-avatar" src="/images/avatar.png" alt="头像">
-        <div class="site-name gt-c-content-color-first">
-            Hi Aoian~
-        </div>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="navbar-nav mr-auto" style="text-align: center">
-            
-            <div class="nav-item">
-                
-                <a href="https://aoianz.github.io" class="menu gt-a-link">
-                    首页
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="https://aoianz.github.io/archives" class="menu gt-a-link">
-                    归档
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="https://aoianz.github.io/tags" class="menu gt-a-link">
-                    标签
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="https://aoianz.github.io/post/about" class="menu gt-a-link">
-                    关于
-                </a>
-                
-            </div>
-            
-            <div class="nav-item">
-                
-                <a href="https://aoianz.github.io/posts" class="menu gt-a-link">
-                    文章
-                </a>
-                
-            </div>
-            
-        </div>
-        <div style="text-align: center">
-            <form id="gridea-search-form" style="position: relative" data-update="1633486366429"
-                action="/search/index.html">
-                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
-                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
-            </form>
-        </div>
-    </div>
-</nav>
-<script>
-    /* 移动端导航栏展开/收起切换 */
-    document.getElementById('changeNavbar').onclick = function () {
-        var element = document.getElementById('navbarSupportedContent');
-        if (element.style.display === 'none' || element.style.display === '') {
-            element.style.display = 'block';
-        } else {
-            element.style.display = 'none';
-        }
-    }
-</script>
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    JavaScript基础笔记
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2021-02-22 ·
-                    </time>
-                    
-                </div>
-                <div class="post-content">
-                    <h3 id="javascript基础笔记">JavaScript基础笔记</h3>
+<div style="display:flex">
+<div class="md_block" id="md_block">
+<div class="round-shape-one"></div>
+<h3 id="javascript基础笔记">JavaScript基础笔记</h3>
 <p>根据pink老师视频https://www.bilibili.com/video/BV1Sy4y1C7ha学习整理</p>
 <h4 id="11初始javascript">1.1初始JavaScript</h4>
 <h5 id="javascript组成">JavaScript组成:</h5>
@@ -1440,57 +1259,210 @@ console.log(123);   //123
 <li>根据在内部函数可以访问外部函数变量的这种机制，用链式查找决定哪些数据能被内部函数访问，就称作作用域链</li>
 </ul>
 
-                </div>
-            </article>
-        </div>
-
-        
-            <div class="next-post">
-                <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://aoianz.github.io/post/6AiMOPdir/" class="post-title gt-a-link">
-                    Andrid练习--仿QQ登录界面
-                </a>
-            </div>
-        
-
-        
-
-        
-
-        
-
-        <div class="site-footer gt-c-content-color-first">
-    <div class="slogan gt-c-content-color-first">I am Aoian,This is my blog~
-Thank you for your visit.</div>
-    <div class="social-container">
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-            
-        
-    </div>
-    <div class="footer-info">
-        
-    </div>
-    <div>
-        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
-                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://aoianz.github.io/atom.xml" target="_blank">RSS</a></a>
-    </div>
+<span id="footnote"></span>
+<div id = "warn"></div>
 </div>
+<div class="toc-container"><ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#javascript%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0">JavaScript基础笔记</a>
+<ul>
+<li><a href="#11%E5%88%9D%E5%A7%8Bjavascript">1.1初始JavaScript</a>
+<ul>
+<li><a href="#javascript%E7%BB%84%E6%88%90">JavaScript组成:</a></li>
+</ul>
+</li>
+<li><a href="#12-javascript%E6%B3%A8%E9%87%8A">1.2 JavaScript注释</a>
+<ul>
+<li><a href="#1%E5%8D%95%E8%A1%8C%E6%B3%A8%E9%87%8A">1.单行注释</a></li>
+<li><a href="#2%E5%A4%9A%E8%A1%8C%E6%B3%A8%E9%87%8A">2.多行注释</a></li>
+</ul>
+</li>
+<li><a href="#13-javascript-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5">1.3 JavaScript 输入输出语句</a></li>
+<li><a href="#21%E5%8F%98%E9%87%8F">2.1变量</a>
+<ul>
+<li><a href="#1%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F">1.声明变量</a></li>
+<li><a href="#2%E8%B5%8B%E5%80%BC">2.赋值</a></li>
+<li><a href="#3%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96">3.变量的初始化</a></li>
+<li><a href="#5-%E6%9B%B4%E6%96%B0%E5%8F%98%E9%87%8F">5. 更新变量</a></li>
+<li><a href="#6-%E5%90%8C%E6%97%B6%E5%A3%B0%E6%98%8E%E5%A4%9A%E4%B8%AA%E5%8F%98%E9%87%8F">6. 同时声明多个变量</a></li>
+</ul>
+</li>
+<li><a href="#22%E5%8F%98%E9%87%8F%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83">2.2变量命名规范</a></li>
+</ul>
+</li>
+<li><a href="#3%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">3.数据类型</a>
+<ul>
+<li><a href="#31%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E4%BB%8B">3.1数据类型简介</a>
+<ul>
+<li><a href="#311-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">3.1.1 为什么需要数据类型</a></li>
+<li><a href="#312-%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">3.1.2 变量的数据类型</a></li>
+<li><a href="#313-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%86%E7%B1%BB">3.1.3 数据类型的分类</a></li>
+</ul>
+</li>
+<li><a href="#32-%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">3.2. 简单数据类型</a>
+<ul>
+<li><a href="#321-%E6%95%B0%E5%AD%97%E5%9E%8B-number">3.2.1 数字型 Number</a>
+<ul>
+<li><a href="#1-%E6%95%B0%E5%AD%97%E5%9E%8B%E8%BF%9B%E5%88%B6">1. 数字型进制</a></li>
+<li><a href="#2%E6%95%B0%E5%AD%97%E8%8C%83%E5%9B%B4">2.数字范围</a></li>
+<li><a href="#3%E6%95%B0%E5%AD%97%E5%9E%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E6%AE%8A%E5%80%BC">3.数字型的三个特殊值</a></li>
+<li><a href="#4isnan">4.isNaN()</a></li>
+</ul>
+</li>
+<li><a href="#322%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9E%8B-string">3.2.2字符串型 String</a>
+<ul>
+<li><a href="#1-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%BC%95%E5%8F%B7%E5%B5%8C%E5%A5%97">1. 字符串引号嵌套</a></li>
+<li><a href="#2%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E4%B9%89%E7%AC%A6">2.字符串转义符</a></li>
+<li><a href="#3-%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%95%BF%E5%BA%A6">3. 字符串长度</a></li>
+<li><a href="#4-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5">4. 字符串拼接</a></li>
+<li><a href="#5-%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5%E5%8A%A0%E5%BC%BA">5. 字符串拼接加强</a></li>
+</ul>
+</li>
+<li><a href="#323%E5%B8%83%E5%B0%94%E5%9E%8B-boolean">3.2.3布尔型 Boolean</a></li>
+<li><a href="#324-undefined-%E5%92%8C-null">3.2.4 Undefined 和 Null</a></li>
+</ul>
+</li>
+<li><a href="#33%E8%8E%B7%E5%8F%96%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">3.3获取变量数据类型</a>
+<ul>
+<li><a href="#331-%E8%8E%B7%E5%8F%96%E6%A3%80%E6%B5%8B%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">3.3.1 获取检测变量的数据类型</a></li>
+<li><a href="#332-%E5%AD%97%E9%9D%A2%E9%87%8F">3.3.2 字面量</a></li>
+</ul>
+</li>
+<li><a href="#34%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2">3.4数据类型转换</a>
+<ul>
+<li><a href="#341-%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E5%AD%97%E5%9E%8B%E9%87%8D%E7%82%B9">3.4.1 转换为数字型（重点)</a></li>
+<li><a href="#342-%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%B8%83%E5%B0%94%E5%9E%8B">3.4.2  转换为布尔型</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#4-%E8%BF%90%E7%AE%97%E7%AC%A6">4. 运算符</a>
+<ul>
+<li><a href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7">运算符优先级</a></li>
+</ul>
+</li>
+<li><a href="#6%E6%95%B0%E7%BB%84">6.数组</a>
+<ul>
+<li><a href="#61-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84">6.1 创建数组</a>
+<ul>
+<li><a href="#611-%E6%95%B0%E7%BB%84%E7%9A%84%E5%88%9B%E5%BB%BA%E6%96%B9%E5%BC%8F">6.1.1 数组的创建方式</a>
+<ul>
+<li><a href="#1-%E5%88%A9%E7%94%A8-new-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84">1. 利用  new 创建数组</a></li>
+<li><a href="#2-%E5%88%A9%E7%94%A8%E6%95%B0%E7%BB%84%E5%AD%97%E9%9D%A2%E9%87%8F%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84">2. 利用数组字面量创建数组</a></li>
+</ul>
+</li>
+<li><a href="#612-%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E7%B1%BB%E5%9E%8B">6.1.2 数组元素的类型</a></li>
+</ul>
+</li>
+<li><a href="#62-%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0">6.2 获取数组元素</a>
+<ul>
+<li><a href="#621-%E6%95%B0%E7%BB%84%E7%9A%84%E7%B4%A2%E5%BC%95">6.2.1 数组的索引</a></li>
+</ul>
+</li>
+<li><a href="#63-%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84">6.3 遍历数组</a>
+<ul>
+<li><a href="#631-%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6">6.3.1 数组的长度</a></li>
+</ul>
+</li>
+<li><a href="#64%E6%95%B0%E7%BB%84%E4%B8%AD%E6%96%B0%E5%A2%9E%E5%85%83%E7%B4%A0">6.4数组中新增元素</a>
+<ul>
+<li><a href="#641-%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9-length-%E9%95%BF%E5%BA%A6%E6%96%B0%E5%A2%9E%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0">6.4.1 通过修改 length 长度新增数组元素</a></li>
+<li><a href="#642-%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E6%96%B0%E5%A2%9E%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0">6.4.2  通过修改数组索引新增数组元素</a></li>
+</ul>
+</li>
+<li><a href="#65-%E6%95%B0%E7%BB%84%E6%A1%88%E4%BE%8B%E7%BB%83%E4%B9%A0">6.5 数组案例练习</a></li>
+</ul>
+</li>
+<li><a href="#7-%E5%87%BD%E6%95%B0">7. 函数</a>
+<ul>
+<li><a href="#71-%E5%87%BD%E6%95%B0%E7%9A%84%E6%A6%82%E5%BF%B5">7.1 函数的概念</a></li>
+<li><a href="#72-%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8">7.2 函数的使用</a></li>
+<li><a href="#73-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0">7.3 函数的参数</a>
+<ul>
+<li><a href="#731%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82">7.3.1形参和实参</a></li>
+<li><a href="#732-%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92%E8%BF%87%E7%A8%8B">7.3.2 函数参数的传递过程</a></li>
+<li><a href="#733-%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82%E4%B8%AA%E6%95%B0%E4%B8%8D%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98">7.3.3 函数形参和实参个数不匹配问题</a></li>
+</ul>
+</li>
+<li><a href="#74-%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC">7.4 函数的返回值</a>
+<ul>
+<li><a href="#741-return-%E8%AF%AD%E5%8F%A5">7.4.1  return 语句</a></li>
+<li><a href="#742-return-%E7%BB%88%E6%AD%A2%E5%87%BD%E6%95%B0">7.4.2 return 终止函数</a></li>
+<li><a href="#743-return-%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC">7.4.3  return 的返回值</a></li>
+<li><a href="#744-%E5%87%BD%E6%95%B0%E6%B2%A1%E6%9C%89-return-%E8%BF%94%E5%9B%9E-undefined">7.4.4 函数没有 return 返回 undefined</a></li>
+<li><a href="#745-break-continue-return-%E7%9A%84%E5%8C%BA%E5%88%AB">7.4.5 break ,continue ,return 的区别</a></li>
+</ul>
+</li>
+<li><a href="#75-arguments%E7%9A%84%E4%BD%BF%E7%94%A8">7.5 arguments的使用</a></li>
+<li><a href="#76-%E5%87%BD%E6%95%B0%E6%A1%88%E4%BE%8B">7.6 函数案例</a>
+<ul>
+<li><a href="#%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E8%B0%83%E7%94%A8%E5%8F%A6%E5%A4%96%E4%B8%80%E4%B8%AA%E5%87%BD%E6%95%B0">函数可以调用另外一个函数</a></li>
+</ul>
+</li>
+<li><a href="#77-%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F">7.7 函数的两种声明方式</a>
+<ul>
+<li><a href="#1%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E6%96%B9%E5%BC%8F%E5%91%BD%E5%90%8D%E5%87%BD%E6%95%B0">1.自定义函数方式(命名函数)</a></li>
+<li><a href="#2-%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%96%B9%E5%BC%8F%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0">2.  函数表达式方式(匿名函数）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#8%E4%BD%9C%E7%94%A8%E5%9F%9F">8.作用域</a>
+<ul>
+<li><a href="#81%E4%BD%9C%E7%94%A8%E5%9F%9F">8.1作用域</a>
+<ul>
+<li><a href="#811%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%A6%82%E8%BF%B0">8.1.1作用域概述</a></li>
+<li><a href="#812-js%E6%B2%A1%E6%9C%89%E5%9D%97%E7%BA%A7%E4%BD%9C%E7%94%A8%E5%9F%9F">8.1.2 JS没有块级作用域</a></li>
+</ul>
+</li>
+<li><a href="#82%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F">8.2变量的作用域</a>
+<ul>
+<li><a href="#821-%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F%E7%9A%84%E5%88%86%E7%B1%BB">8.2.1 变量作用域的分类</a>
+<ul>
+<li><a href="#1%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">1.全局变量</a></li>
+<li><a href="#2%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F">2.局部变量</a></li>
+</ul>
+</li>
+<li><a href="#822-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%92%8C%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB">8.2.2 全局变量和局部变量的区别</a></li>
+</ul>
+</li>
+<li><a href="#83%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE">8.3作用域链</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="fullPage"><canvas id="canvas"></canvas></div>
+</article>
+<div id="eof"><span>EOF</span></div><div class="round-shape-one"></div>
+<section>
+<div class="doc_comments">
 
-<script>
-  hljs.initHighlightingOnLoad()
+</div></section>
+</div></div></div><script>
+"use strict";!function(){for(var n=document.getElementsByTagName("pre"),e=n.length,s=0;s<e;s++){n[s].innerHTML='<span class="line-number"></span>'+n[s].innerHTML+'<span class="cl"></span>';for(var a=n[s].innerHTML.split(/\n/).length,r=0;r<a-1;r++){n[s].getElementsByTagName("span")[0].innerHTML+="<span>"+(r+1)+"</span>"}}}();
+let mainNavLinks=document.querySelectorAll(".markdownIt-TOC a");window.addEventListener("scroll",event=>{let fromTop=window.scrollY;mainNavLinks.forEach((link,index)=>{let section=document.getElementById(decodeURI(link.hash).substring(1));let nextSection=null
+if(mainNavLinks[index+1]){nextSection=document.getElementById(decodeURI(mainNavLinks[index+1].hash).substring(1));}
+if(section.offsetTop<=fromTop){if(nextSection){if(nextSection.offsetTop>fromTop){link.classList.add("currentToc");}else{link.classList.remove("currentToc");}}else{link.classList.add("currentToc");}}else{link.classList.remove("currentToc");}});});
+var list=document.querySelectorAll(".katex");for(var i=0;i<list.length;i++){list[i].style.display="unset"};
+var h=document.documentElement,b=document.body,st="scrollTop",sh="scrollHeight",progress=document.querySelector(".progress"),scroll;document.addEventListener("scroll",function(){scroll=(h[st]||b[st])/((h[sh]||b[sh])-h.clientHeight)*100;progress.style.setProperty("--scroll",scroll+"%")});
+var wxScale=new WxScale({fullPage:document.querySelector("#fullPage"),canvas:document.querySelector("#canvas")});var imgBox=document.querySelectorAll("#md_block img");for(var i=0;i<imgBox.length;i++){imgBox[i].onclick=function(e){wxScale.start(this)}};
+content="本文最后更新于2021-02-22，已超过 1 年没有更新，涉及的内容可能已经失效！";var date1="2021-02-22 11:41:27";date1=date1.replace("-","/");var date2=new Date();var date3=date2.getTime()-new Date(date1).getTime();var days=Math.floor(date3/(24*3600*1000));if(days>=365){document.getElementById("warn").innerHTML=content};
 </script>
-
-    </div>
-</div>
+<style>#magnifyImg{position:fixed;left:0;top:0;text-align:center;width:100%;display:none;z-index:9999}#magnifyImg img{object-fit:contain;background:#eaecef;padding:15px;border-radius:10px;height:auto;width:auto;vertical-align:middle}</style>
+<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;"></a><div class="footer animated fadeInDown"><div class="site_footer"><div class="mysocials"><div class="my_socials"><a href="https://www.zhihu.com/people/real-aoian"title="zhihu"><i class="iconfont icon-zhihu"></i></a></div></div><div class="copyright"id="copyright">Copyright © 2018-2020 <a href="https://aoianz.github.io" style="margin:0;">Hi Aoian~</a>.</div>
+<span style="display: inline;margin-right:15px;">👁<strong><span id="busuanzi_value_site_uv"></span></strong></span><span id="busuanzi_container_page_pv" style="display: inline;"><span>📚<strong>7</strong> posts</span></div></div>
+<script>
+console.log("\n %c \u26a1Theme: Bitcron-pro Author's Blog:https://blog.blinkstar.cn  Writen By Serence  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;", );
+</script>
+<script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+<script type="text/javascript" async src="https://aoianz.github.io/media/js/prism.js"></script>
 </body>
 </html>
