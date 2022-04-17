@@ -1,36 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://aoianz.github.io</id>
-    <title>Hi Aoian~</title>
-    <updated>2022-04-17T09:59:14.589Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://aoianz.github.io"/>
-    <link rel="self" href="https://aoianz.github.io/atom.xml"/>
-    <subtitle>I am Aoian,This is my blog~
-Thank you for your visit.</subtitle>
-    <logo>https://aoianz.github.io/images/avatar.png</logo>
-    <icon>https://aoianz.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2022, Hi Aoian~</rights>
-    <entry>
-        <title type="html"><![CDATA[HI,陌生人]]></title>
-        <id>https://aoianz.github.io/post/mate/</id>
-        <link href="https://aoianz.github.io/post/mate/">
-        </link>
-        <updated>2030-01-01T10:52:06.000Z</updated>
-        <content type="html"><![CDATA[<blockquote>
-<p>每天你都有机会跟别人擦身而过，你也许对他一无所知，不过也许有一天，他会变成一个朋友或者是知己。<br>
-　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　by《重庆森林》</p>
-</blockquote>
-<figure data-type="image" tabindex="1"><img src="https://aoianz.github.io/post-images/1633172003724.jpg" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Linux之磁盘管理]]></title>
-        <id>https://aoianz.github.io/post/7npxlctX_/</id>
-        <link href="https://aoianz.github.io/post/7npxlctX_/">
-        </link>
-        <updated>2022-04-17T09:55:47.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="磁盘管理">磁盘管理</h3>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<title>Linux之磁盘管理 | Hi Aoian~</title>
+<meta name="description" content="I am Aoian,This is my blog~
+Thank you for your visit." />
+<link rel="shortcut icon" href="https://aoianz.github.io/media/images/favicon.ico?v=1650189397407">
+<link rel="stylesheet" href="https://aoianz.github.io/styles/main.css">
+<script src="https://cdn.staticfile.org/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://aoianz.github.io/media/js/bigfoot.min.js"></script>
+
+    <script src="https://cdn.staticfile.org/prism/1.17.1/prism.min.js"></script>
+    
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+    
+  </head>
+  <body>
+    <!-- start: main -->
+    <div class="main animated">
+      
+      <div class="header animated fadeInDown">
+  <div class="site_title_container">
+    <div class="site_title"><a href="https://aoianz.github.io"><img src="https://aoianz.github.io/media/images/logo.svg" alt=""></a></div>
+    <div class="description">
+      <p class="sub_title">Hi Aoian~</p>
+      <div class="my_socials">
+        
+          
+            <a href="#" class="translate-effect" target="_blank"><i class="fa fa-instagram"></i></a>
+          
+        
+          
+            <a href="#" class="translate-effect" target="_blank"><i class="fa fa-send-o"></i></a>
+          
+        
+          
+            <a href="#" class="translate-effect" target="_blank"><i class="fa fa-twitter"></i></a>
+          
+        
+          
+            <a href="#" class="translate-effect" target="_blank"><i class="fa fa-weibo"></i></a>
+          
+        
+          
+            <a href="#" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="autopagerize_page_element">
+  <div class="content">
+
+      <div class="post animated fadeInDown">
+        <div class="post_title">
+          <h2><a>Linux之磁盘管理</a></h2>
+          <span class="date">2022-04-17</span>
+        </div>
+
+              <div class="post_content markdown">
+                <h3 id="磁盘管理">磁盘管理</h3>
 <blockquote>
 <p>概述</p>
 </blockquote>
@@ -187,6 +219,131 @@ Filesystem           1K-blocks     Used Available Use% Mounted on
 <p>卸载/dev/hdc6</p>
 <pre><code>[root@www ~]# umount /dev/hdc6
 </code></pre>
-]]></content>
-    </entry>
-</feed>
+
+              </div>
+
+            <div class="post_footer">
+              <div class="meta">
+                <div class="info">
+                  <span class="field tags"><i class="fa fa-flask"></i>
+                    <a href="https://aoianz.github.io/tag/xx3kMlzK-4/" class="tag">Linux</a>
+                  </span>
+                </div>
+              </div>
+            </div>
+      </div>
+      <div id="comments" class="doc_comments">
+              
+                <script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.min.js"></script>
+
+<script>
+    var valine = new Valine();
+    valine.init({
+        el: '#comments',
+        appId: 'jUvrpiYxxXzK3bTWJ83dq24F-gzGzoHsz' ,
+        appKey: 'czGvjYQOfKPd7Yfoawql5GXS',
+        pageSize: 30
+    })
+
+jQuery(document).ready(function($){
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+})
+</script>
+
+              
+      </div>
+  </div>
+</div>
+<a id="back_to_top" href="#" class="back_to_top" style="display: block;"><span>△</span>
+</a>
+    </div>
+    <!-- end: #main -->
+
+    <div class="footer">
+  <div class="bitcron_nav">
+    
+    <a href="https://aoianz.github.io" class="menu">
+      首页
+    </a>
+    
+    <a href="https://aoianz.github.io/archives" class="menu">
+      归档
+    </a>
+    
+    <a href="https://aoianz.github.io/tags" class="menu">
+      标签
+    </a>
+    
+    <a href="https://aoianz.github.io/post/about" class="menu">
+      关于
+    </a>
+    
+  </div>
+
+  <div class="powered_by">
+    <a href="https://www.caicai.me" target="_blank">Designed by CaiCai,</a><a href="https://gridea.dev/" target="_blank">Powered by Gridea.</a>
+  </div>
+
+  <div class="footer_slogan">
+    <img src="https://aoianz.github.io/media/images/footer.svg" alt="把生命浪费在美好的事物上">
+  </div>
+</div>
+
+<!--字体渲染 & 统计-->
+<script src="https://aoianz.github.io/media/js/sii0bgt.js" async=""></script>
+<script type="text/javascript" src="https://aoianz.github.io/media/js/fonts.js"></script>
+
+<style>html{display:none;}</style>
+
+<script>
+  if( self == top ) {
+    document.documentElement.style.display = 'block' ;
+  } else {
+    top.location = self.location ;
+  }
+  jQuery(document).ready(function($){
+    <!-- bigfootjs 控制-->
+    var bigfoot = $.bigfoot({
+      actionOriginalFN: "hide",
+      positionContent: "true"
+    });
+    <!--新窗口打开链接 by 林木木-->
+    $('.post_content a:not(:has(img)),.author-name a,.footer a').click (function() {
+        var location_href = window.location.href.replace(/.*:\/\/(.*)\/.*/,'$1')
+        var click_href = $(this).attr('href').replace(/.*:\/\/(.*)(\/|)$/,'$1').replace(/^(.*)\/.*/,'$1');
+        if ( location_href != click_href )
+            $(this).attr('target','_blank');
+
+    });
+  });
+</script>
+
+
+<script>
+  jQuery(document).ready(function($){
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  });
+</script>
+  </body>
+</html>
