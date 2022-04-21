@@ -29,10 +29,3 @@
     el.parentNode.removeChild(el);
     wrapper.appendChild(el);
 })
-var script = document.createElement("script");
-script.setAttribute("type","text/javascript");
-script.setAttribute("id","myhk");
-script.setAttribute("src","https://myhkw.cn/api/player/1650200704117");
-script.setAttribute("key","1650200704117");
-script.setAttribute("m","1");
-document.documentElement.appendChild(script);

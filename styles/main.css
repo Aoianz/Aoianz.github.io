@@ -3634,7 +3634,7 @@ html {
 }
 body {
   color: #333;
-  font-family: 'source-han-sans-simplified-c', 'PingFang SC', 'Hiragino Sans GB', 'PingHei', 'Open Sans', sans-serif, Helvetica Neue, 'Work Sans', 'Microsoft YaHei', SimSun;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'PingFang TC', 'Microsoft YaHei', 'Source Han Sans TC', 'Noto Sans CJK TC', 'WenQuanYi Micro Hei', sans-serif;
   font-size: 16px;
   width: 100%;
   background-color: #f7f7f7;
