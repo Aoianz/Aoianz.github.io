@@ -13,7 +13,6 @@
 <script src="https://myhkw.cn/player/js/jquery.min.js" type="text/javascript"></script>
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({id: "Jf1lnMcrQNUTBuAT",ck: "Jf1lnMcrQNUTBuAT"})</script>
-<script  color="255,182,193" opacity='1' zIndex="-1" count="100" src="https://cdn.bootcss.com/canvas-nest.js/2.0.4/canvas-nest.js" type="text/javascript"></script>
 <script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
 <script>
   new LingQue.Monitor().init({id:"Jf4FQnYpfRwMsrmi",sendSuspicious:true,sendSpaPv:true});
@@ -120,6 +119,29 @@
                     </div>
                 </div>
             </div>
+            <div id="comments" class="doc_comments">
+                
+                  <script type="text/javascript" src="https://unpkg.com/valine@1.4.18/dist/Valine.min.js"></script>
+
+<script>
+    var valine = new Valine();
+    valine.init({
+        el: '#comments',
+        appId: 'jUvrpiYxxXzK3bTWJ83dq24F-gzGzoHsz' ,
+        appKey: 'czGvjYQOfKPd7Yfoawql5GXS',
+        pageSize: 25
+    })
+
+jQuery(document).ready(function($){
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+})
+</script>
+
+                
+        </div>
     </div>
     <div class="footer">
     
@@ -143,6 +165,7 @@ Thank you for your visit. -->
         <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
         <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
+        <div id="vcomments"></div>
 </body>
 
 </html>
