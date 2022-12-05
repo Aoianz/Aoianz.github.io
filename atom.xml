@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://aoianz.github.io</id>
     <title>Aoian&apos;s Blog</title>
-    <updated>2022-09-01T14:08:29.877Z</updated>
+    <updated>2022-12-05T08:12:45.345Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://aoianz.github.io"/>
     <link rel="self" href="https://aoianz.github.io/atom.xml"/>
@@ -25,168 +25,15 @@ Thank you for your visit.</subtitle>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Linux之磁盘管理]]></title>
-        <id>https://aoianz.github.io/post/7npxlctX_/</id>
-        <link href="https://aoianz.github.io/post/7npxlctX_/">
+        <title type="html"><![CDATA[Android开发小作品：一本记账.app]]></title>
+        <id>https://aoianz.github.io/post/qWwCxcaUG/</id>
+        <link href="https://aoianz.github.io/post/qWwCxcaUG/">
         </link>
-        <updated>2022-04-17T09:55:47.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="磁盘管理">磁盘管理</h3>
-<blockquote>
-<p>概述</p>
+        <updated>2021-10-18T00:59:07.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调</p>
 </blockquote>
-<p>Linux磁盘管理好坏直接关系到整个系统的性能问题。</p>
-<p>Linux磁盘管理常用命令为 df、du。</p>
-<ul>
-<li>df ：列出文件系统的整体磁盘使用量</li>
-<li>du：检查磁盘空间使用量</li>
-</ul>
-<blockquote>
-<p>df</p>
-</blockquote>
-<p>df命令参数功能：检查文件系统的磁盘空间占用情况。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
-<p>语法：</p>
-<pre><code>df [-ahikHTm] [目录或文件名]
-</code></pre>
-<p>选项与参数：</p>
-<ul>
-<li>-a ：列出所有的文件系统，包括系统特有的 /proc 等文件系统；</li>
-<li>-k ：以 KBytes 的容量显示各文件系统；</li>
-<li>-m ：以 MBytes 的容量显示各文件系统；</li>
-<li>-h ：以人们较易阅读的 GBytes, MBytes, KBytes 等格式自行显示；</li>
-<li>-H ：以 M=1000K 取代 M=1024K 的进位方式；</li>
-<li>-T ：显示文件系统类型, 连同该 partition 的 filesystem 名称 (例如 ext3) 也列出；</li>
-<li>-i ：不用硬盘容量，而以 inode 的数量来显示</li>
-</ul>
-<p>测试：</p>
-<pre><code># 将系统内所有的文件系统列出来！
-# 在 Linux 底下如果 df 没有加任何选项
-# 那么默认会将系统内所有的 (不含特殊内存内的文件系统与 swap) 都以 1 Kbytes 的容量来列出来！
-[root@kuangshen /]# df
-Filesystem     1K-blocks   Used Available Use% Mounted on
-devtmpfs          889100       0    889100   0% /dev
-tmpfs             899460     704    898756   1% /dev/shm
-tmpfs             899460     496    898964   1% /run
-tmpfs             899460       0    899460   0% /sys/fs/cgroup
-/dev/vda1       41152812 6586736  32662368  17% /
-tmpfs             179896       0    179896   0% /run/user/0
-# 将容量结果以易读的容量格式显示出来
-[root@kuangshen /]# df -h
-Filesystem     Size Used Avail Use% Mounted on
-devtmpfs       869M     0 869M   0% /dev
-tmpfs           879M 708K 878M   1% /dev/shm
-tmpfs           879M 496K 878M   1% /run
-tmpfs           879M     0 879M   0% /sys/fs/cgroup
-/dev/vda1       40G  6.3G   32G  17% /
-tmpfs           176M     0 176M   0% /run/user/0
-# 将系统内的所有特殊文件格式及名称都列出来
-[root@kuangshen /]# df -aT
-Filesystem     Type       1K-blocks   Used Available Use% Mounted on
-sysfs         sysfs               0       0         0    - /sys
-proc           proc                0       0         0    - /proc
-devtmpfs       devtmpfs       889100       0    889100   0% /dev
-securityfs     securityfs          0       0         0    - /sys/kernel/security
-tmpfs         tmpfs          899460     708    898752   1% /dev/shm
-devpts         devpts              0       0         0    - /dev/pts
-tmpfs         tmpfs          899460     496    898964   1% /run
-tmpfs         tmpfs          899460       0    899460   0% /sys/fs/cgroup
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/systemd
-pstore         pstore              0       0         0    - /sys/fs/pstore
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/freezer
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/cpuset
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/hugetlb
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/blkio
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/net_cls,net_prio
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/memory
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/pids
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/cpu,cpuacct
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/devices
-cgroup         cgroup              0       0         0    - /sys/fs/cgroup/perf_event
-configfs       configfs            0       0         0    - /sys/kernel/config
-/dev/vda1     ext4         41152812 6586748  32662356  17% /
-systemd-1      -                   -       -         -    - /proc/sys/fs/binfmt_misc
-mqueue         mqueue              0       0         0    - /dev/mqueue
-debugfs       debugfs             0       0         0    - /sys/kernel/debug
-hugetlbfs     hugetlbfs           0       0         0    - /dev/hugepages
-tmpfs         tmpfs          179896       0    179896   0% /run/user/0
-binfmt_misc   binfmt_misc         0       0         0    - /proc/sys/fs/binfmt_misc
-# 将 /etc 底下的可用的磁盘容量以易读的容量格式显示
-
-[root@kuangshen /]# df -h /etc
-Filesystem     Size Used Avail Use% Mounted on
-/dev/vda1       40G  6.3G   32G  17% /
-</code></pre>
-<blockquote>
-<p>du</p>
-</blockquote>
-<p>Linux du命令也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的，这里介绍Linux du命令。</p>
-<p>语法：</p>
-<pre><code>du [-ahskm] 文件或目录名称
-</code></pre>
-<p>选项与参数：</p>
-<ul>
-<li>-a ：列出所有的文件与目录容量，因为默认仅统计目录底下的文件量而已。</li>
-<li>-h ：以人们较易读的容量格式 (G/M) 显示；</li>
-<li>-s ：列出总量而已，而不列出每个各别的目录占用容量；</li>
-<li>-S ：不包括子目录下的总计，与 -s 有点差别。</li>
-<li>-k ：以 KBytes 列出容量显示；</li>
-<li>-m ：以 MBytes 列出容量显示；</li>
-</ul>
-<p>测试：</p>
-<pre><code># 只列出当前目录下的所有文件夹容量（包括隐藏文件夹）:
-# 直接输入 du 没有加任何选项时，则 du 会分析当前所在目录的文件与目录所占用的硬盘空间。
-[root@kuangshen home]# du
-16./redis
-8./www/.oracle_jre_usage  # 包括隐藏文件的目录
-24./www
-48.                        # 这个目录(.)所占用的总量
-# 将文件的容量也列出来
-[root@kuangshen home]# du -a
-4./redis/.bash_profile
-4./redis/.bash_logout    
-....中间省略....
-4./kuangstudy.txt # 有文件的列表了
-48.
-# 检查根目录底下每个目录所占用的容量
-[root@kuangshen home]# du -sm /*
-0/bin
-146/boot
-.....中间省略....
-0/proc
-.....中间省略....
-1/tmp
-3026/usr  # 系统初期最大就是他了啦！
-513/var
-2666/www
-</code></pre>
-<p>通配符 * 来代表每个目录。</p>
-<p>与 df 不一样的是，du 这个命令其实会直接到文件系统内去搜寻所有的文件数据。</p>
-<blockquote>
-<p>磁盘挂载与卸除</p>
-</blockquote>
-<p>根文件系统之外的其他文件要想能够被访问，都必须通过“关联”至根文件系统上的某个目录来实现，此关联操作即为“挂载”，此目录即为“挂载点”,解除此关联关系的过程称之为“卸载”</p>
-<p>Linux 的磁盘挂载使用mount命令，卸载使用umount命令。</p>
-<p>磁盘挂载语法：</p>
-<pre><code>mount [-t 文件系统] [-L Label名] [-o 额外选项] [-n] 装置文件名 挂载点
-</code></pre>
-<p>测试：</p>
-<pre><code># 将 /dev/hdc6 挂载到 /mnt/hdc6 上面！
-[root@www ~]# mkdir /mnt/hdc6
-[root@www ~]# mount /dev/hdc6 /mnt/hdc6
-[root@www ~]# df
-Filesystem           1K-blocks     Used Available Use% Mounted on
-/dev/hdc6              1976312     42072   1833836   3% /mnt/hdc6
-</code></pre>
-<p>磁盘卸载命令 umount 语法：</p>
-<pre><code>umount [-fn] 装置文件名或挂载点
-</code></pre>
-<p>选项与参数：</p>
-<ul>
-<li>-f ：强制卸除！可用在类似网络文件系统 (NFS) 无法读取到的情况下；</li>
-<li>-n ：不升级 /etc/mtab 情况下卸除。</li>
-</ul>
-<p>卸载/dev/hdc6</p>
-<pre><code>[root@www ~]# umount /dev/hdc6
-</code></pre>
+<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/5NeZjA"><img src="https://z3.ax1x.com/2021/10/18/5NeZjA.gif" alt="5NeZjA.gif" loading="lazy"></a></figure>
 ]]></content>
     </entry>
 </feed>
