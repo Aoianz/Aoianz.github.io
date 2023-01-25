@@ -27,6 +27,12 @@
       s.parentNode.insertBefore(hm, s);
     })();
 </script>
+<!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '679024e8acf7f3e4555f06fe1024adb2' });
+</script>
         <meta name="description" content="用户组管理
 每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理。不同Linux 系统对用户组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。
 用户组的管理涉及用户组的添加、删除和修..." />
