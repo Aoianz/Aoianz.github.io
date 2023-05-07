@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta http-equiv="Access-Control-Allow-Origin" content="https://aoianz.github.io/media/gridea-search/result-template.ejs">
-<title>Android开发小作品：一本记账.app | Aoian&#39;s Blog</title>
+<title>Selenium实战练习2_实现邮箱反向的注册功能 | Aoian&#39;s Blog</title>
 <link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico">
 <link href="https://aoianz.github.io/styles/main.css" rel="stylesheet">
 <link href="//at.alicdn.com/t/font_1678829_7cn41ho9lyt.css" rel="stylesheet">
@@ -33,12 +33,18 @@
     window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
     cronitor('config', { clientKey: '679024e8acf7f3e4555f06fe1024adb2' });
 </script>
-        <meta name="description" content="
-软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调
+        <meta name="description" content="Selenium实战练习2_实现邮箱反向的注册功能
 
 
-..." />
-        <meta name="keywords" content="Android" />
+欢迎扫码关注微信公众号&quot;野心与家&quot;
+
+要求:
+
+实现代码:
+veydows_reg_emal_false_dict:
+
+from selenium import w..." />
+        <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -105,45 +111,91 @@
                     <div class="post_page">
                         <div class="post animated fadeInDown">
                             <div class="post_title post_detail_title">
-                                <h2>Android开发小作品：一本记账.app</h2>
+                                <h2>Selenium实战练习2_实现邮箱反向的注册功能</h2>
                                 <span class="article-info">
-                                    2021-10-18, 43 words, 1 min read
+                                    2021-03-09, 439 words, 3 min read
                                 </span>
                             </div>
                             <div class="post_content markdown">
                                 <p class="md_block">
                                     <span class="md_line md_line_start md_line_end">
-                                        <blockquote>
-<p>软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调</p>
+                                        <h2 id="selenium实战练习2_实现邮箱反向的注册功能">Selenium实战练习2_实现邮箱反向的注册功能</h2>
+<p><img src="https://img-blog.csdnimg.cn/2020111019175843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic
+" width="40%"></p>
+<blockquote>
+<p>欢迎扫码关注微信公众号&quot;野心与家&quot;</p>
 </blockquote>
-<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/5NeZjA"><img src="https://z3.ax1x.com/2021/10/18/5NeZjA.gif" alt="5NeZjA.gif" loading="lazy"></a></figure>
+<p>要求:<br>
+<img src="https://img-blog.csdnimg.cn/20210625195555478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></p>
+<p>实现代码:</p>
+<p>veydows_reg_emal_false_dict:</p>
+<hr>
+<pre><code class="language-python">from selenium import webdriver
+import time
+datainfo=[
+    {&quot;username&quot;:&quot;test123&quot;,&quot;mail&quot;:&quot;test@163&quot;,&quot;exp&quot;:&quot;无效的邮箱地址&quot;},
+    {&quot;username&quot;:&quot;test123&quot;,&quot;mail&quot;:&quot;&quot;,&quot;exp&quot;:&quot;邮箱不能为空&quot;},
+    {&quot;username&quot;:&quot;test123&quot;,&quot;mail&quot;:&quot;test_0001.com&quot;,&quot;exp&quot;:&quot;无效的邮箱地址&quot;}
+   ]
+for i in datainfo:
+    driver= webdriver.Firefox()
+    driver.get('http://39.101.167.251/qftest-demo/')
+    time.sleep(3)
+    driver.find_element_by_link_text(&quot;免费注册&quot;).click()
+    driver.find_element_by_id(&quot;username&quot;).send_keys(i[&quot;username&quot;])
+    driver.find_element_by_id(&quot;email&quot;).send_keys(i[&quot;mail&quot;])
+    driver.find_element_by_id(&quot;password&quot;).send_keys(&quot;123456&quot;)
+    driver.find_element_by_id(&quot;repassword&quot;).send_keys(&quot;123456&quot;)
+    driver.find_element_by_link_text(&quot;立即注册&quot;).click()
+    time.sleep(2)
+    exceptvalue=i[&quot;exp&quot;]
+    actualvalue=driver.find_element_by_xpath(&quot;/html/body/div[2]/div/div/form/div/dl[2]/dd/span&quot;).text
+    if exceptvalue==actualvalue:
+        print(&quot;执行成功&quot;)
+    else:
+        print(&quot;执行失败&quot;)
+    driver.quit()
+
+</code></pre>
+<p>veydows_reg_emal_false_csv:</p>
+<hr>
+<pre><code class="language-python">from selenium import webdriver
+import time
+import csv
+with open(r&quot;C:\Users\ASUS\Documents\VSCodeProject\Python\csv_mail.csv&quot;,&quot;r&quot;,encoding=&quot;utf-8&quot;) as f:
+    datainfo=csv.reader(f)
+    for i in datainfo:
+        driver=webdriver.Firefox()
+        driver.get(&quot;http://39.101.167.251/qftest-demo/&quot;)
+        driver.find_element_by_link_text(&quot;免费注册&quot;).click()
+        driver.find_element_by_id(&quot;username&quot;).send_keys(i[0])
+        driver.find_element_by_id(&quot;email&quot;).send_keys(i[1])
+        driver.find_element_by_id(&quot;password&quot;).send_keys(i[2])
+        driver.find_element_by_id(&quot;repassword&quot;).send_keys(i[3])
+        driver.find_element_by_link_text(&quot;立即注册&quot;).click()
+        time.sleep(2)
+        exp=&quot;http://39.101.167.251/qftest-demo/user/index.html&quot;
+        exceptvalue=i[4]
+        actualvalue=driver.find_element_by_xpath(&quot;/html/body/div[2]/div/div/form/div/dl[2]/dd/span&quot;).text
+        if exceptvalue==actualvalue:
+            print(&quot;执行成功&quot;)
+        else:
+            print(&quot;执行失败&quot;)
+        driver.quit()
+</code></pre>
+<p>附录:	csv文件</p>
+<hr>
+<pre><code class="language-xml">test123,test@163,123456,123456,无效的邮箱地址
+test123,,123456,123456,邮箱不能为空
+test123,test_0001.com,123456,123456,无效的邮箱地址
+</code></pre>
 <br />
                                             
                                 </p>
                             </div>
                             <div class="post_footer">
                                 
-                                    <div class="meta">
-                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
-                                                
-                                                    <a href="https://aoianz.github.io/tag/wFZpTJOOV/" class="article-info">
-                                                        Android
-                                                    </a>
-                                                    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
                                         
-                                            <div class="next-post" style="margin-top: 20px;">
-                                                <div class="next">下一篇</div>
-                                                <a href="https://aoianz.github.io/post/tZappBHgq/">
-                                                    <h3 class="post-title">
-                                                        安卓Toast获取输入框文本
-                                                    </h3>
-                                                </a>
-                                            </div>
-                                            
                             </div>
                         </div>
                         

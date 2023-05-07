@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta http-equiv="Access-Control-Allow-Origin" content="https://aoianz.github.io/media/gridea-search/result-template.ejs">
-<title>Android开发小作品：一本记账.app | Aoian&#39;s Blog</title>
+<title>Selenium实战练习1_淘宝登录 | Aoian&#39;s Blog</title>
 <link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico">
 <link href="https://aoianz.github.io/styles/main.css" rel="stylesheet">
 <link href="//at.alicdn.com/t/font_1678829_7cn41ho9lyt.css" rel="stylesheet">
@@ -33,12 +33,13 @@
     window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
     cronitor('config', { clientKey: '679024e8acf7f3e4555f06fe1024adb2' });
 </script>
-        <meta name="description" content="
-软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调
+        <meta name="description" content="Selenium实战练习1_淘宝登录
 
 
-..." />
-        <meta name="keywords" content="Android" />
+欢迎扫码关注微信公众号&quot;野心与家&quot;
+
+1.打开淘宝首页，点击“亲，请登录”,在打开的页面输入用户名和密码,点击登录按钮获取页面中信息进行判断。（此处可输入错误的密码获取提示信息作..." />
+        <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -105,41 +106,117 @@
                     <div class="post_page">
                         <div class="post animated fadeInDown">
                             <div class="post_title post_detail_title">
-                                <h2>Android开发小作品：一本记账.app</h2>
+                                <h2>Selenium实战练习1_淘宝登录</h2>
                                 <span class="article-info">
-                                    2021-10-18, 43 words, 1 min read
+                                    2021-04-04, 582 words, 3 min read
                                 </span>
                             </div>
                             <div class="post_content markdown">
                                 <p class="md_block">
                                     <span class="md_line md_line_start md_line_end">
-                                        <blockquote>
-<p>软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调</p>
+                                        <h2 id="selenium实战练习1_淘宝登录">Selenium实战练习1_淘宝登录</h2>
+<p><img src="https://img-blog.csdnimg.cn/2020111019175843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic
+" width="40%"></p>
+<blockquote>
+<p>欢迎扫码关注微信公众号&quot;野心与家&quot;</p>
 </blockquote>
-<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/5NeZjA"><img src="https://z3.ax1x.com/2021/10/18/5NeZjA.gif" alt="5NeZjA.gif" loading="lazy"></a></figure>
+<p>1.打开淘宝首页，点击“亲，请登录”,在打开的页面输入用户名和密码,点击登录按钮获取页面中信息进行判断。（此处可输入错误的密码获取提示信息作为实际结果）</p>
+<pre><code class="language-python">from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+driver=webdriver.Firefox()
+driver.get(&quot;https://www.taobao.com/&quot;)
+# 点击&quot;亲,请登录&quot;
+driver.find_element_by_link_text(&quot;亲，请登录&quot;).click()
+# 输入用户名和密码(避免淘宝验证,输入空值)
+driver.find_element_by_id(&quot;fm-login-id&quot;).send_keys(&quot; &quot;)
+driver.find_element_by_id(&quot;fm-login-password&quot;).send_keys(&quot; &quot;)
+# 点击登录按钮获取页面中的信息进行判断
+# driver.find_element_by_class_name(&quot;fm-button fm-submit password-login&quot;).click()
+driver.find_element_by_xpath(&quot;/html/body/div/div[2]/div[3]/div/div/div/div[2]/div/form/div[4]/button&quot;).click()
+acl=driver.find_element_by_class_name(&quot;login-error-msg&quot;).text
+exp=&quot;请输入帐户名&quot;
+if acl==exp:
+    print(&quot;登录失败&quot;)
+else:
+    print(&quot;运行成功&quot;)
+time.sleep(10)
+driver.quit()
+</code></pre>
+<p>2.点击 cofirm.html页面中的按钮，获取提示框中的文本，并点击取消按钮，写出代码即可（无需运行）。</p>
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function show_confirm()
+{
+var r=confirm(&quot;Press a button!&quot;);
+if (r==true)
+  {
+  alert(&quot;You pressed OK!&quot;);
+  }
+else
+  {
+  alert(&quot;You pressed Cancel!&quot;);
+  }
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;input type=&quot;button&quot; onclick=&quot;show_confirm()&quot; value=&quot;Show a confirm box&quot; /&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-python"># 点击cofirm.html页面的按钮
+driver.find_element_by_xpath(&quot;/html/body/input&quot;).click()
+alert = driver.switch_to.alert
+# 获取提示框文本
+alert_text = alert.text
+print(alert_text)
+# 点击取消按钮
+alert.dismiss()
+</code></pre>
+<p>3、点击 prompt.html页面中的按钮，向提示框中输入做自己的姓名，并点击确定按钮，写出代码即可（无需运行）</p>
+<pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+function disp_prompt()
+  {
+  var name=prompt(&quot;请输入您的名字&quot;,&quot;Bill Gates&quot;)
+  if (name!=null &amp;&amp; name!=&quot;&quot;)
+    {
+    document.write(&quot;你好，&quot; + name + &quot;！今天过得好吗？&quot;)
+    }
+  }
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;input type=&quot;button&quot; onclick=&quot;disp_prompt()&quot; value=&quot;显示一个提示框&quot; /&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<pre><code class="language-python">driver.find_element_by_xpath(&quot;/html/body/input&quot;).click()
+alert = driver.switch_to.alert
+# 提示框中输入姓名
+alert_send = alert.send_keys(&quot;赵志乾&quot;)
+# 点击确定按钮
+alert.accept()
+</code></pre>
 <br />
                                             
                                 </p>
                             </div>
                             <div class="post_footer">
                                 
-                                    <div class="meta">
-                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
-                                                
-                                                    <a href="https://aoianz.github.io/tag/wFZpTJOOV/" class="article-info">
-                                                        Android
-                                                    </a>
-                                                    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
                                         
                                             <div class="next-post" style="margin-top: 20px;">
                                                 <div class="next">下一篇</div>
-                                                <a href="https://aoianz.github.io/post/tZappBHgq/">
+                                                <a href="https://aoianz.github.io/post/QgatnF3kx/">
                                                     <h3 class="post-title">
-                                                        安卓Toast获取输入框文本
+                                                        Android练习使用约束布局构建简单计算器效果
                                                     </h3>
                                                 </a>
                                             </div>

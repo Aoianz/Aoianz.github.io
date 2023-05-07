@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta http-equiv="Access-Control-Allow-Origin" content="https://aoianz.github.io/media/gridea-search/result-template.ejs">
-<title>Android开发小作品：一本记账.app | Aoian&#39;s Blog</title>
+<title>安卓Toast获取输入框文本 | Aoian&#39;s Blog</title>
 <link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico">
 <link href="https://aoianz.github.io/styles/main.css" rel="stylesheet">
 <link href="//at.alicdn.com/t/font_1678829_7cn41ho9lyt.css" rel="stylesheet">
@@ -33,12 +33,16 @@
     window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
     cronitor('config', { clientKey: '679024e8acf7f3e4555f06fe1024adb2' });
 </script>
-        <meta name="description" content="
-软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调
+        <meta name="description" content="安卓Toast获取输入框文本
 
 
-..." />
-        <meta name="keywords" content="Android" />
+
+欢迎扫码关注微信公众号&quot;野心与家&quot;
+
+在开发过程中如果我们想用Toast获取EditText的值
+关键方法是使用getText()获取,再将获取到的值打印在Toast上
+例如在一个界面..." />
+        <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -105,41 +109,56 @@
                     <div class="post_page">
                         <div class="post animated fadeInDown">
                             <div class="post_title post_detail_title">
-                                <h2>Android开发小作品：一本记账.app</h2>
+                                <h2>安卓Toast获取输入框文本</h2>
                                 <span class="article-info">
-                                    2021-10-18, 43 words, 1 min read
+                                    2021-05-24, 302 words, 2 min read
                                 </span>
                             </div>
                             <div class="post_content markdown">
                                 <p class="md_block">
                                     <span class="md_line md_line_start md_line_end">
-                                        <blockquote>
-<p>软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调</p>
+                                        <h3 id="安卓toast获取输入框文本">安卓Toast获取输入框文本</h3>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/2020111019175843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic
+" width="40%"></p>
+<blockquote>
+<p>欢迎扫码关注微信公众号&quot;野心与家&quot;</p>
 </blockquote>
-<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/5NeZjA"><img src="https://z3.ax1x.com/2021/10/18/5NeZjA.gif" alt="5NeZjA.gif" loading="lazy"></a></figure>
+<p>在开发过程中如果我们想用Toast获取EditText的值<br>
+关键方法是使用getText()获取,再将获取到的值打印在Toast上</p>
+<p>例如在一个界面上,想要用Toast提示用户设置的密码<br>
+效果如下:<br>
+<img src="https://img-blog.csdnimg.cn/20210514154822610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"></p>
+<p>实现代码部分如下</p>
+<pre><code class="language-java">EditText etName = (EditText) findViewById(R.id.EditT);
+String inputPwd=etName.getText().toString();
+Toast.makeText(MainActivity2.this,&quot;密码设置成功!\n您输入的密码为:&quot;+inputPwd,Toast.LENGTH_LONG).show();
+//方法二:直接在Toast使用getText(),此方法就不必写String inputPwd=etName.getText().toString();
+//Toast.makeText(MainActivity2.this,&quot;密码设置成功！\n您输入的密码为：&quot;+etName.getText().toString(),Toast.LENGTH_LONG).show();
+</code></pre>
+<p>注意此方法无法限制用户输入的文本类型例如空格<br>
+使用android:digits可以限制用户输入的字符类型<br>
+例如:</p>
+<pre><code class="language-xml"> android:digits=&quot;qwertyuiopasdfghjklzxcvbnm1234567890&quot;
+</code></pre>
+<p>在活动建立一个EditText对象以从EditText中查看检索数据，并使用findViewById()方法从布局找到EditText</p>
+<pre><code class="language-java">EditText etName = (EditText)findViewById(R.id.editText1); 
+</code></pre>
+<p>后可以使用getText()方法来检索与该视图关联的文本信息，它须要被转换为字符串</p>
+<pre><code class="language-java">strName = etName.getText().toString();
+</code></pre>
 <br />
                                             
                                 </p>
                             </div>
                             <div class="post_footer">
                                 
-                                    <div class="meta">
-                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
-                                                
-                                                    <a href="https://aoianz.github.io/tag/wFZpTJOOV/" class="article-info">
-                                                        Android
-                                                    </a>
-                                                    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
                                         
                                             <div class="next-post" style="margin-top: 20px;">
                                                 <div class="next">下一篇</div>
-                                                <a href="https://aoianz.github.io/post/tZappBHgq/">
+                                                <a href="https://aoianz.github.io/post/HWV1nuhNt/">
                                                     <h3 class="post-title">
-                                                        安卓Toast获取输入框文本
+                                                        安卓动态添加隐藏碎片简单用法
                                                     </h3>
                                                 </a>
                                             </div>

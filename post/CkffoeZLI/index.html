@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta http-equiv="Access-Control-Allow-Origin" content="https://aoianz.github.io/media/gridea-search/result-template.ejs">
+<title>安卓--实现获取控件数据 | Aoian&#39;s Blog</title>
+<link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico">
+<link href="https://aoianz.github.io/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/font_1678829_7cn41ho9lyt.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="Aoian&#39;s Blog » Feed" href="https://aoianz.github.io/atom.xml">
+<script src="https://myhkw.cn/player/js/jquery.min.js" type="text/javascript"></script>
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jf1lnMcrQNUTBuAT",ck: "Jf1lnMcrQNUTBuAT"})</script>
+<script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
+<script>
+  new LingQue.Monitor().init({id:"Jf4FQnYpfRwMsrmi",sendSuspicious:true,sendSpaPv:true});
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a0db48628dfe0b4a11151f4ab4784e04";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '679024e8acf7f3e4555f06fe1024adb2' });
+</script>
+        <meta name="description" content="安卓--实现获取控件数据
+
+
+
+欢迎扫码关注微信公众号&quot;野心与家&quot;
+
+运行效果图 :
+
+
+完整代码如下 :
+
+public class MainActivity8 extends AppCompatActivity im..." />
+        <meta name="keywords" content="" />
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://aoianz.github.io"><img src="https://aoianz.github.io/media/images/logo.svg" alt=""></a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-github"></i></a>
+            
+        
+            
+                <a href="#https://evolution-host.com/" target="_blank"><i class="iconfont icon-twitter"></i></a>
+            
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-weibo"></i></a>
+            
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-instagram"></i></a>
+            
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-telegram"></i></a>
+            
+        
+        <a href="https://aoianz.github.io/atom.xml" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="https://aoianz.github.io" class="menu">首页</a>
+            
+        
+            
+                <a href="https://aoianz.github.io/archives" class="menu">归档</a>
+            
+        
+            
+                <a href="https://aoianz.github.io/tags" class="menu">标签</a>
+            
+        
+            
+                <a href="https://aoianz.github.io/post/about" class="menu">关于</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://aoianz.github.io/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>安卓--实现获取控件数据</h2>
+                                <span class="article-info">
+                                    2021-05-20, 816 words, 5 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h3 id="安卓-实现获取控件数据">安卓--实现获取控件数据</h3>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/2020111019175843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic
+" width="40%"></p>
+<blockquote>
+<p>欢迎扫码关注微信公众号&quot;野心与家&quot;</p>
+</blockquote>
+<p>运行效果图 :</p>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/20210524190622245.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" loading="lazy"><br>
+完整代码如下 :</p>
+<hr>
+<pre><code class="language-java">public class MainActivity8 extends AppCompatActivity implements View.OnClickListener {
+    private Button btn_submit;
+    private Button btn_exit;
+    private String user;
+    private RadioGroup rg_sex;
+    private RadioButton radioButton;
+    private CheckBox checkBox1, checkBox2, checkBox3;
+    private List&lt;CheckBox&gt; checkBoxList = new ArrayList&lt;CheckBox&gt;();
+    private StringBuffer sb;
+    private Spinner textSpinner;
+    private String getContent;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main8);
+        btn_submit=(Button) findViewById(R.id.btn_submit);
+        btn_exit=(Button) findViewById(R.id.btn_exit);
+        btn_submit.setOnClickListener(this);//应用当前接口作为监听器
+        btn_exit.setOnClickListener(this);
+        rg_sex=(RadioGroup) findViewById(R.id.rg_sex);
+        checkBox1 = (CheckBox) findViewById(R.id.checkbox1);
+        checkBox2 = (CheckBox) findViewById(R.id.checkbox2);
+        checkBox3 = (CheckBox) findViewById(R.id.checkbox3);
+        checkBoxList.add(checkBox1);
+        checkBoxList.add(checkBox2);
+        checkBoxList.add(checkBox3);
+        textSpinner = (Spinner) findViewById(R.id.spinner);
+    }
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.btn_submit:
+                //1.获取RadioGroup当中选中的RadioButton中的内容
+                radioButton=(RadioButton) findViewById(rg_sex.getCheckedRadioButtonId());
+                user=&quot;性   别:&quot;+radioButton.getText().toString();
+                //2.获取CheckBox中的内容
+                StringBuffer sb = new StringBuffer();
+                for (CheckBox checkbox: checkBoxList){
+                    if (checkbox.isChecked()){
+                        sb.append(checkbox.getText().toString()+&quot; &quot;);
+                    }
+                }
+                
+                //3.获取Spinner中的内容
+                String getContent = &quot;学   历:&quot;+textSpinner.getSelectedItem().toString();
+                Toast.makeText(MainActivity8.this, &quot;您输入的内容是:\r\n&quot;+user+&quot;\r\n&quot;+&quot;爱   好:&quot;+sb+&quot;\r\n&quot;+getContent, Toast.LENGTH_LONG).show();
+                break;
+                case  R.id.btn_exit:
+//                Toast.makeText(MainActivity8.this, &quot;我单机了退出按钮&quot;, Toast.LENGTH_SHORT).show();
+                finish();
+        }
+    }
+}
+</code></pre>
+<p>xml:</p>
+<hr>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+    xmlns:app=&quot;http://schemas.android.com/apk/res-auto&quot;
+    xmlns:tools=&quot;http://schemas.android.com/tools&quot;
+    android:layout_width=&quot;match_parent&quot;
+    android:layout_height=&quot;match_parent&quot;
+    android:orientation=&quot;vertical&quot;
+    android:padding=&quot;8dp&quot;
+    tools:context=&quot;.MainActivity8&quot;&gt;
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center_vertical&quot;
+        android:orientation=&quot;horizontal&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;性   别:&quot;/&gt;
+        &lt;RadioGroup
+            android:id=&quot;@+id/rg_sex&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:checkedButton=&quot;@id/rb_girl&quot;
+            android:orientation=&quot;horizontal&quot;&gt;
+            &lt;RadioButton
+                android:id=&quot;@+id/rb_boy&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;男&quot;/&gt;
+            &lt;RadioButton
+                android:id=&quot;@+id/rb_girl&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;女&quot;/&gt;
+        &lt;/RadioGroup&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center_vertical&quot;
+        android:orientation=&quot;horizontal&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;爱   好:&quot;/&gt;
+        &lt;!--多选框可以使用checked属性设置默认选中,但不推荐用于单选按钮--&gt;
+        &lt;CheckBox
+            android:id=&quot;@+id/checkbox1&quot;
+            android:checked=&quot;true&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;音乐&quot;/&gt;
+        &lt;CheckBox
+            android:id=&quot;@+id/checkbox2&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;美术&quot;/&gt;
+        &lt;CheckBox
+            android:id=&quot;@+id/checkbox3&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;体育&quot;/&gt;
+    &lt;/LinearLayout&gt;
+
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center_vertical&quot;
+        android:orientation=&quot;horizontal&quot;&gt;
+        &lt;TextView
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;学   历:&quot;/&gt;
+        &lt;Spinner
+            android:id=&quot;@+id/spinner&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:entries=&quot;@array/myarray&quot;
+            android:layout_weight=&quot;1&quot;
+            /&gt;
+    &lt;/LinearLayout&gt;
+    &lt;LinearLayout
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:gravity=&quot;center_vertical&quot;
+        android:orientation=&quot;horizontal&quot;&gt;
+        &lt;Button
+            android:id=&quot;@+id/btn_submit&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_marginRight=&quot;16dp&quot;
+            android:text=&quot;提交&quot;/&gt;
+        &lt;Button
+            android:id=&quot;@+id/btn_exit&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;退出&quot;/&gt;
+    &lt;/LinearLayout&gt;
+&lt;/LinearLayout&gt;
+</code></pre>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://aoianz.github.io/post/CnZyIsbWd/">
+                                                    <h3 class="post-title">
+                                                        朝花夕拾 jQuery笔记
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div id="comments" class="doc_comments">
+                        
+                          <script type="text/javascript" src="https://unpkg.com/valine@1.4.18/dist/Valine.min.js"></script>
+
+<script>
+    var valine = new Valine();
+    valine.init({
+        el: '#comments',
+        appId: 'jUvrpiYxxXzK3bTWJ83dq24F-gzGzoHsz' ,
+        appKey: 'czGvjYQOfKPd7Yfoawql5GXS',
+        pageSize: 30
+    })
+
+jQuery(document).ready(function($){
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+})
+</script>
+
+                        
+                </div>
+                </div>
+            </div>
+            
+    </div>
+    <div class="footer">
+    
+    <div class="footer_slogan">
+        <!-- I am Aoian,This is my blog~
+Thank you for your visit. -->
+        <img src="https://aoianz.github.io/media/images/footer.svg" alt="追求源于热爱">
+    </div>
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://aoianz.github.io/media/scripts/util.js"></script>
+<script src="https://myhkw.cn/api/player/1650200704117" id="myhk" key="1650200704117" m="1"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <div id="vcomments"></div>
+</body>
+
+</html>

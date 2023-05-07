@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <meta http-equiv="Access-Control-Allow-Origin" content="https://aoianz.github.io/media/gridea-search/result-template.ejs">
-<title>Android开发小作品：一本记账.app | Aoian&#39;s Blog</title>
+<title>利用selenium自动化实现搜索框输入内容 | Aoian&#39;s Blog</title>
 <link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico">
 <link href="https://aoianz.github.io/styles/main.css" rel="stylesheet">
 <link href="//at.alicdn.com/t/font_1678829_7cn41ho9lyt.css" rel="stylesheet">
@@ -33,12 +33,15 @@
     window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
     cronitor('config', { clientKey: '679024e8acf7f3e4555f06fe1024adb2' });
 </script>
-        <meta name="description" content="
-软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调
+        <meta name="description" content="利用selenium自动化实现搜索框输入内容
 
 
-..." />
-        <meta name="keywords" content="Android" />
+欢迎扫码关注微信公众号&quot;野心与家&quot;
+
+1.打开百度页面
+2.获取当前页面的ur,并打印出来(driver.current url)
+3.获取当前页面的title,并打印出..." />
+        <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -105,41 +108,81 @@
                     <div class="post_page">
                         <div class="post animated fadeInDown">
                             <div class="post_title post_detail_title">
-                                <h2>Android开发小作品：一本记账.app</h2>
+                                <h2>利用selenium自动化实现搜索框输入内容</h2>
                                 <span class="article-info">
-                                    2021-10-18, 43 words, 1 min read
+                                    2021-05-11, 345 words, 2 min read
                                 </span>
                             </div>
                             <div class="post_content markdown">
                                 <p class="md_block">
                                     <span class="md_line md_line_start md_line_end">
-                                        <blockquote>
-<p>软件设计风格: 本软件采用明亮的黄色作为软件主题色 明亮快活，洋溢活力，注入了太阳能量的暖黄色调</p>
+                                        <h3 id="利用selenium自动化实现搜索框输入内容">利用selenium自动化实现搜索框输入内容</h3>
+<p><img src="https://img-blog.csdnimg.cn/2020111019175843.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQ2NjUzNzAy,size_16,color_FFFFFF,t_70#pic
+" width="40%"></p>
+<blockquote>
+<p>欢迎扫码关注微信公众号&quot;野心与家&quot;</p>
 </blockquote>
-<figure data-type="image" tabindex="1"><a href="https://imgtu.com/i/5NeZjA"><img src="https://z3.ax1x.com/2021/10/18/5NeZjA.gif" alt="5NeZjA.gif" loading="lazy"></a></figure>
+<p>1.打开百度页面<br>
+2.获取当前页面的ur,并打印出来(driver.current url)<br>
+3.获取当前页面的title,并打印出来(driver.title)<br>
+4.百度&quot;selenium&quot; ,点击百度一下<br>
+5.判断页面中的“百度一下” 按钮是否正常显示，是则打印&quot;正常显示按钮”<br>
+6.获取文本框中的文本，并打印出来<br>
+7.清除百度文本框中内容<br>
+8.获取页面底部的信息:把百度设为主页关于百度About Baidu百度推广<br>
+9.关闭浏览器</p>
+<p>运行结果如下:</p>
+<hr>
+<p><img src="https://img-blog.csdnimg.cn/20210610154916524.png#pic_center" alt="在这里插入图片描述" loading="lazy"><br>
+实现代码如下:</p>
+<hr>
+<pre><code class="language-python">from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import time
+driver=webdriver.Firefox()
+driver.get(&quot;https://www.baidu.com&quot;)
+# 获取url和title并打印
+print(driver.current_url)
+print(driver.title)
+
+# 判断百度一下是否正常显示
+flag=driver.find_element_by_id(&quot;su&quot;).is_displayed()
+if flag:
+    print(&quot;正常显示按钮&quot;);
+else:
+    print(&quot;显示异常&quot;);
+
+# 百度selenium,并点击百度一下
+shuru=driver.find_element_by_id(&quot;kw&quot;)
+shuru.send_keys(&quot;selenium&quot;)
+driver.find_element_by_id(&quot;su&quot;).click()
+# 获取文本框内容并打印
+print(shuru.get_attribute(&quot;value&quot;))
+# 清除百度文本框内容
+time.sleep(2)
+shuru.clear()
+
+# 获取页面底部信息
+xinxi=driver.find_element_by_class_name(&quot;s-bottom-layer-content&quot;)
+print(xinxi.get_attribute(&quot;textContent&quot;))
+
+time.sleep(5)
+driver.quit()
+
+
+</code></pre>
 <br />
                                             
                                 </p>
                             </div>
                             <div class="post_footer">
                                 
-                                    <div class="meta">
-                                        <div class="info"><span class="field tags"><i class="iconfont icon-tag-sm"></i>
-                                                
-                                                    <a href="https://aoianz.github.io/tag/wFZpTJOOV/" class="article-info">
-                                                        Android
-                                                    </a>
-                                                    
-                                            </span>
-                                        </div>
-                                    </div>
-                                    
                                         
                                             <div class="next-post" style="margin-top: 20px;">
                                                 <div class="next">下一篇</div>
-                                                <a href="https://aoianz.github.io/post/tZappBHgq/">
+                                                <a href="https://aoianz.github.io/post/HYIIPTFcc/">
                                                     <h3 class="post-title">
-                                                        安卓Toast获取输入框文本
+                                                        Selenium实战练习1_淘宝登录
                                                     </h3>
                                                 </a>
                                             </div>

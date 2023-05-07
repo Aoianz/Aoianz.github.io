@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta http-equiv="Access-Control-Allow-Origin" content="https://aoianz.github.io/media/gridea-search/result-template.ejs">
+<title>朝花夕拾 jQuery笔记 | Aoian&#39;s Blog</title>
+<link rel="shortcut icon" href="https://aoianz.github.io/favicon.ico">
+<link href="https://aoianz.github.io/styles/main.css" rel="stylesheet">
+<link href="//at.alicdn.com/t/font_1678829_7cn41ho9lyt.css" rel="stylesheet">
+<link rel="alternate" type="application/rss+xml" title="Aoian&#39;s Blog » Feed" href="https://aoianz.github.io/atom.xml">
+<script src="https://myhkw.cn/player/js/jquery.min.js" type="text/javascript"></script>
+<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id: "Jf1lnMcrQNUTBuAT",ck: "Jf1lnMcrQNUTBuAT"})</script>
+<script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script>
+<script>
+  new LingQue.Monitor().init({id:"Jf4FQnYpfRwMsrmi",sendSuspicious:true,sendSpaPv:true});
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a0db48628dfe0b4a11151f4ab4784e04";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!-- Cronitor RUM -->
+<script async src="https://rum.cronitor.io/script.js"></script>
+<script>
+    window.cronitor = window.cronitor || function() { (window.cronitor.q = window.cronitor.q || []).push(arguments); };
+    cronitor('config', { clientKey: '679024e8acf7f3e4555f06fe1024adb2' });
+</script>
+        <meta name="description" content="朝花夕拾---jQuery笔记
+1.jQuery基本使用
+1. jQuery对象和DOM对象
+
+1.用原生JS获取来的对象就是DOM对象
+2.jQuery方法获取的元索就是jQuery对象。
+3.jQuery对象本质是:利用$对DOM对象包..." />
+        <meta name="keywords" content="" />
+</head>
+
+<body>
+    <div class="main animated">
+        <div class="header animated fadeInDown">
+    <div class="site_title_container">
+        <div class="site_title">
+            <a href="https://aoianz.github.io"><img src="https://aoianz.github.io/media/images/logo.svg" alt=""></a>
+        </div>
+    </div>
+    <div class="my_socials">
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-github"></i></a>
+            
+        
+            
+                <a href="#https://evolution-host.com/" target="_blank"><i class="iconfont icon-twitter"></i></a>
+            
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-weibo"></i></a>
+            
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-instagram"></i></a>
+            
+        
+            
+                <a href="#" target="_blank"><i class="iconfont icon-telegram"></i></a>
+            
+        
+        <a href="https://aoianz.github.io/atom.xml" target="_blank"><i class="iconfont icon-rss"></i></a>
+    </div>
+</div>
+
+    <div class="header_menu">
+        
+            
+                <a href="https://aoianz.github.io" class="menu">首页</a>
+            
+        
+            
+                <a href="https://aoianz.github.io/archives" class="menu">归档</a>
+            
+        
+            
+                <a href="https://aoianz.github.io/tags" class="menu">标签</a>
+            
+        
+            
+                <a href="https://aoianz.github.io/post/about" class="menu">关于</a>
+            
+        
+        <div class="gridea-search-div">
+            <form id="gridea-search-form" action="https://aoianz.github.io/search/">
+                <input class="gridea-search-input" autocomplete="off" spellcheck="false" name="q"/>
+            </form>
+        </div>
+    </div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+                    <div class="post_page">
+                        <div class="post animated fadeInDown">
+                            <div class="post_title post_detail_title">
+                                <h2>朝花夕拾 jQuery笔记</h2>
+                                <span class="article-info">
+                                    2021-05-19, 4575 words, 21 min read
+                                </span>
+                            </div>
+                            <div class="post_content markdown">
+                                <p class="md_block">
+                                    <span class="md_line md_line_start md_line_end">
+                                        <h3 id="朝花夕拾-jquery笔记">朝花夕拾---jQuery笔记</h3>
+<h4 id="1jquery基本使用">1.jQuery基本使用</h4>
+<h5 id="1-jquery对象和dom对象">1. jQuery对象和DOM对象</h5>
+<blockquote>
+<p>1.用原生JS获取来的对象就是DOM对象</p>
+<p>2.jQuery方法获取的元索就是jQuery对象。</p>
+<p>3.jQuery对象本质是:利用$对DOM对象包装后产生的对象(伪数组形式存储)。</p>
+</blockquote>
+<pre><code class="language-html">    &lt;style&gt;
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;script&gt;
+        //1.DOM对象:用原生js获取过来的就是DOM对象
+        var myDiv = document.querySelector('div');//myDiv就是DOM对象
+        //2.jQuery对象: 用jQuery获取过来的就是JQuery对象
+        $('div'); // $('div');是一个JQuery对象
+        console.dir($('div'));
+        //3.jQuery对象只能使用jquery方法,DOM对象则使用原生的JavaScript属性和
+        myDiv.style.display = 'none';//调用原生隐藏
+        // $('div').style.display = 'none';这个$('div')是一个jquery的像不能使用原生js的属性和方法
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h5 id="2jquery对象和dom对象相互转化">2.jQuery对象和DOM对象相互转化</h5>
+<pre><code class="language-html">&lt;body&gt;
+     &lt;video src=&quot;mov.mp4&quot;&gt;&lt;/video&gt;
+     &lt;script&gt;
+         //1. 直接获取视频,得到的就是jquery对象
+         $('video');
+         //2. 用原生js获取为DOM对象
+         var myvideo = document.querySelector('video');
+        //  $(myvideo).play; jQuery里面没有play这个方法
+        // myvideo.play(); 
+        
+        //2.转化为jQuery对象
+        $('video')[0].play();
+        $('video').get(0).play()
+     &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="2-jquery选择器">2. jQuery选择器</h4>
+<h5 id="21jquery-基础选择器">2.1	jQuery 基础选择器</h5>
+<p>原生 JS 获取元素方式很多，很杂，而且兼容性情况不一致，因此 jQuery 给我们做了封装，使获取元素统一标准。</p>
+<pre><code class="language-javascript">$(“选择器”) // 里面选择器直接写 CSS 选择器即可，但是要加引号
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID选择器</td>
+<td>$(&quot;#id&quot;)</td>
+<td>获取指定ID的元素</td>
+</tr>
+<tr>
+<td>通配符选择器</td>
+<td>$(&quot;*&quot;)</td>
+<td>匹配所有元素</td>
+</tr>
+<tr>
+<td>类选择器</td>
+<td>$(&quot;.class&quot;)</td>
+<td>获取同一类class的元素</td>
+</tr>
+<tr>
+<td>标签/元素选择器</td>
+<td>$(&quot;div&quot;)</td>
+<td>获取同一类标签的所有元素</td>
+</tr>
+<tr>
+<td>并集选择器</td>
+<td>$(&quot;div,p,li&quot;)</td>
+<td>选取多个元素</td>
+</tr>
+<tr>
+<td>交集选择器</td>
+<td>$(&quot;li.current&quot;)</td>
+<td>交集元素</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-javascript">ID选择器:
+$(&quot;#byId&quot;).css(&quot;background&quot;,&quot;pink&quot;);
+类选择器:
+$(&quot;.byClass&quot;).css(&quot;background&quot;,&quot;red&quot;);
+标签/元素选择器:
+$(&quot;p&quot;).css(&quot;font-size&quot;,&quot;10px&quot;);
+通配符选择器:
+$(&quot;*&quot;).css(&quot;background&quot;,&quot;yellow&quot;);
+并集选择器:
+$(&quot;.byClass,#byId&quot;).css(&quot;background&quot;,&quot;pink&quot;);
+</code></pre>
+<h5 id="22jquery-层级选择器">2.2	jQuery 层级选择器</h5>
+<h5 id="23隐式迭代重要">2.3	隐式迭代（重要）</h5>
+<blockquote>
+<p>遍历内部 DOM 元素（伪数组形式存储）的过程就叫做隐式迭代。<br>
+简单理解：给匹配到的所有元素进行循环遍历，执行相应的方法，而不用我们再进行循环，简化我们的操作,方便我们调用。</p>
+</blockquote>
+<pre><code class="language-javascript">&lt;body&gt;
+    &lt;div&gt;我是div&lt;/div&gt;
+    &lt;div&gt;我是div&lt;/div&gt;
+    &lt;div&gt;我是div&lt;/div&gt;
+    &lt;div&gt;我是div&lt;/div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;相同的操作&lt;/li&gt;
+        &lt;li&gt;相同的操作&lt;/li&gt;
+        &lt;li&gt;相同的操作&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;script&gt;
+        //1.获取四个div元素
+        console.log($(&quot;div&quot;));
+        //2.给四个div设置背景颜色为粉色,jQuery对象不能使用style
+        $(&quot;div&quot;).css(&quot;background&quot;,&quot;pink&quot;);
+        //3.隐式迭代就是匹配的所有元素内部进行遍历循环，给每一个元素添加css这个方法 
+        $(&quot;ul li&quot;).css(&quot;color&quot;,&quot;red&quot;);
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h5 id="24筛选过滤选择器">2.4筛选/过滤选择器</h5>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>用法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:first</td>
+<td>$(&quot;li:first&quot;)</td>
+<td>获取第一个li元素</td>
+</tr>
+<tr>
+<td>:last</td>
+<td>$(&quot;li:last&quot;)</td>
+<td>获取最后一个li元素</td>
+</tr>
+<tr>
+<td>:eq(index)</td>
+<td>$(&quot;li:eq(2)&quot;)</td>
+<td>获取到的li元素中，选择索引号为2的元素，索引号index从0开始。</td>
+</tr>
+<tr>
+<td>:odd</td>
+<td>$(&quot;li:odd&quot;)</td>
+<td>获取到的li元素中，选择索引号为奇数的元素</td>
+</tr>
+<tr>
+<td>:even</td>
+<td>$(&quot;li:even&quot;)</td>
+<td>获取到的li元素中，选择索引号为偶数的元素</td>
+</tr>
+</tbody>
+</table>
+<h5 id="25jquery筛选方法重点">2.5jQuery筛选方法(重点)</h5>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>用法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parent</td>
+<td>$(&quot;li&quot;) . parent();</td>
+<td>查找父级</td>
+</tr>
+<tr>
+<td>children(selector)</td>
+<td>$(&quot;ul&quot;).children(&quot;li&quot;)</td>
+<td>相当于$(&quot;ul&gt;li&quot;),最近一级(亲儿子)</td>
+</tr>
+<tr>
+<td>find(selector)</td>
+<td>$(&quot;ul&quot;). find(&quot;li&quot;);</td>
+<td>相当于$(&quot;ul li&quot;),后代选择器</td>
+</tr>
+<tr>
+<td>siblings(selector)</td>
+<td>$(&quot;. first&quot;). siblings(&quot;li&quot;);</td>
+<td>查找兄弟节点，不包括自己本身</td>
+</tr>
+<tr>
+<td>nextAll([expr])</td>
+<td>$(&quot;. first&quot;). nextAll()</td>
+<td>查找当前元素之后所有的同辈元素</td>
+</tr>
+<tr>
+<td>prevtAll([expr])</td>
+<td>$(&quot;. last&quot;). prevAll()</td>
+<td>查找当前元素之前所有的同辈元素</td>
+</tr>
+<tr>
+<td>hasClass(class)</td>
+<td>$(&quot;.div&quot;). hasClass(&quot;protected&quot;)</td>
+<td>检查当前的元素是否含有某个特定的类,如果有，则返回true</td>
+</tr>
+<tr>
+<td>eq(index)</td>
+<td>$(&quot;li&quot;). eq(2);</td>
+<td>相当于$(&quot;li:eq(2)&quot;), index从0开始</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>重点记住： parent() children() find() siblings() eq()</p>
+</blockquote>
+<h5 id="26jquery-里面的排他思想">2.6	jQuery 里面的排他思想</h5>
+<p>想要做多选一效果</p>
+<pre><code class="language-javascript">$(this).css(“color”,”red”);
+$(this).siblings().css(“color”,””);
+</code></pre>
+<p>例如:</p>
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;08.排他思想.html&lt;/title&gt;
+    &lt;script src=&quot;../js/jquery-1.12.4.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;button&gt;按钮1&lt;/button&gt;
+    &lt;button&gt;按钮2&lt;/button&gt;
+    &lt;button&gt;按钮3&lt;/button&gt;
+    &lt;button&gt;按钮4&lt;/button&gt;
+    &lt;button&gt;按钮5&lt;/button&gt;
+    &lt;button&gt;按钮6&lt;/button&gt;
+    &lt;button&gt;按钮7&lt;/button&gt;
+    &lt;script&gt;
+        $(function(){
+            //1. 隐式迭代 给所有按钮都绑定点击事件
+            $(&quot;button&quot;).click(function(){
+                //2. 当前的元素变换背景颜色
+                $(this).css(&quot;background&quot;,&quot;pink&quot;);
+                //3. 其余兄弟去掉背景颜色 隐式迭代
+                // $(this).siblings(&quot;button&quot;).css(&quot;background&quot;,&quot;&quot;);
+                // $(this).siblings().css(&quot;background&quot;,&quot;&quot;);
+                // 因为此处siblings()只有一个button所以可以省略
+                //4. 链式编程
+                $(this).css(&quot;background&quot;,&quot;pink&quot;).siblings().css(&quot;background&quot;,&quot;&quot;);
+            });
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h5 id="27-链式编程">2.7 链式编程</h5>
+<p>链式编程是为了节省代码量，看起来更优雅。</p>
+<pre><code class="language-javascript">$(this).css('color', 'red').sibling().css('color', '');
+</code></pre>
+<p>例如:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;button&gt;快速&lt;/button&gt;
+    &lt;button&gt;快速&lt;/button&gt;
+    &lt;button&gt;快速&lt;/button&gt;
+    &lt;button&gt;快速&lt;/button&gt;
+    &lt;button&gt;快速&lt;/button&gt;
+    &lt;button&gt;快速&lt;/button&gt;
+    &lt;button&gt;快速&lt;/button&gt;
+    &lt;script&gt;
+        $(function() {
+            // 1. 隐式迭代 给所有的按钮都绑定了点击事件
+            $(&quot;button&quot;).click(function() {
+                // 2. 让当前元素颜色变为红色
+                // $(this).css(&quot;color&quot;, &quot;red&quot;);
+                // 3. 让其余的姐妹元素不变色 
+                // $(this).siblings().css(&quot;color&quot;, &quot;&quot;);
+                // 链式编程
+                $(this).css(&quot;color&quot;, &quot;red&quot;).siblings().css(&quot;color&quot;, &quot;&quot;);
+            });
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h4 id="3jquery-样式操作">3.jQuery 样式操作</h4>
+<hr>
+<h5 id="31-操作-css-方法">3.1 操作 css 方法</h5>
+<blockquote>
+<p>jQuery 可以使用 css 方法来修改简单元素样式； 也可以操作类，修改多个样式。</p>
+</blockquote>
+<blockquote>
+<p>1.参数只写属性名，则是返回属性值</p>
+</blockquote>
+<pre><code class="language-javascript">$(this).css(&quot;color&quot;);
+</code></pre>
+<blockquote>
+<p>2.参数是<mark>属性名，属性值，逗号分隔</mark>，是设置一组样式，属性必须加引号，值如果是数字可以不用跟单位和引号</p>
+</blockquote>
+<pre><code class="language-javascript">$(this).css(''color'', ''red'');
+</code></pre>
+<blockquote>
+<p>3.参数可以是对象形式，方便设置多组样式。属性名和属性值用冒号隔开， 属性可以不用加引号</p>
+</blockquote>
+<pre><code class="language-javascript">$(this).css(
+    { 
+        &quot;color&quot;:&quot;white&quot;,
+        &quot;font-size&quot;:&quot;20px&quot;
+    }
+);
+</code></pre>
+<p>例如:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;style&gt;
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div&gt;&lt;/div&gt;
+    &lt;script&gt;
+        // 操作样式之css方法
+        $(function() {
+            console.log($(&quot;div&quot;).css(&quot;width&quot;));
+            // $(&quot;div&quot;).css(&quot;width&quot;, &quot;300px&quot;);
+            // $(&quot;div&quot;).css(&quot;width&quot;, 300);
+            // $(&quot;div&quot;).css(height, &quot;300px&quot;); 属性名一定要加引号
+            $(&quot;div&quot;).css({
+                width: 400,
+                height: 400,
+                backgroundColor: &quot;red&quot;
+                    // 如果是复合属性则必须采取驼峰命名法，如果值不是数字，则需要加引号
+            })
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h5 id="32-设置类样式方法">3.2 设置类样式方法</h5>
+<blockquote>
+<p>作用等同于以前的 classList，可以操作类样式， 注意操作类里面的参数不要加点</p>
+</blockquote>
+<blockquote>
+<p>1.添加类</p>
+</blockquote>
+<pre><code class="language-javascript">$(&quot;div&quot;).addClass(&quot;current&quot;);
+</code></pre>
+<blockquote>
+<p>2.移动类</p>
+</blockquote>
+<pre><code class="language-javascript">$(&quot;div&quot;).removeClass(&quot;current&quot;);
+</code></pre>
+<blockquote>
+<p>3.切换类</p>
+</blockquote>
+<pre><code class="language-javascript">$(&quot;div&quot;).toggleClass(&quot;current&quot;);
+</code></pre>
+<blockquote>
+<p>例如:</p>
+</blockquote>
+<pre><code class="language-html">&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        div {
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            margin: 100px auto;
+            transition: all 0.5s;
+        }
+        
+        .current {
+            background-color: red;
+            transform: rotate(360deg);
+        }
+    &lt;/style&gt;
+    &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;current&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        $(function() {
+            // 1. 添加类 addClass()
+            // $(&quot;div&quot;).click(function() {
+            //     // $(this).addClass(&quot;current&quot;);
+            // });
+            // 2. 删除类 removeClass()
+            // $(&quot;div&quot;).click(function() {
+            //     $(this).removeClass(&quot;current&quot;);
+            // });
+            // 3. 切换类 toggleClass()
+            $(&quot;div&quot;).click(function() {
+                $(this).toggleClass(&quot;current&quot;);
+            });
+        })
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h5 id="33-类操作与classname的区别">3.3 类操作与className的区别</h5>
+<blockquote>
+<p>原生 JS 中 className 会覆盖元素原先里面的类名。</p>
+<p>jQuery 里面类操作只是对指定类进行操作，不影响原先的类名</p>
+</blockquote>
+<p>例如:</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        .one {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            transition: all .3s;
+        }
+        
+        .two {
+            transform: rotate(720deg);
+        }
+    &lt;/style&gt;
+    &lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div class=&quot;one two&quot;&gt;&lt;/div&gt;
+    &lt;script&gt;
+        //原生js
+        // var one = document.querySelector(&quot;.one&quot;);
+        // one.className = &quot;two&quot;;
+
+        // $(&quot;.one&quot;).addClass(&quot;two&quot;);  这个addClass相当于追加类名 不影响以前的类名
+        $(&quot;.one&quot;).removeClass(&quot;two&quot;);
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<h4 id="4-jquery-效果">4. jQuery 效果</h4>
+<h5 id="41-显示隐藏效果">4.1 显示隐藏效果</h5>
+<h6 id="411-显示语法规范">4.1.1 显示语法规范</h6>
+<pre><code class="language-html">show([speed,[easing],[fn]])
+</code></pre>
+<h6 id="412-隐藏语法规范">4.1.2 隐藏语法规范</h6>
+<pre><code class="language-html">hide([speed,[easing],[fn]])
+</code></pre>
+<h6 id="413-切换语法规范">4.1.3 切换语法规范</h6>
+<pre><code class="language-html">toggle([speed,[easing],[fn]])
+</code></pre>
+<h6 id="414-参数含义">4.1.4 参数含义</h6>
+<blockquote>
+<ol>
+<li>
+<p>参数都可以省略， 无动画直接显示。</p>
+</li>
+<li>
+<p>speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。</p>
+</li>
+<li>
+<p>easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。</p>
+</li>
+<li>
+<p>fn: 回调函数，在动画完成时执行的函数，每个元素执行一次。</p>
+</li>
+</ol>
+</blockquote>
+<h5 id="42-滑动效果">4.2 滑动效果</h5>
+<h6 id="421-下滑效果语法规范">4.2.1 下滑效果语法规范</h6>
+<pre><code class="language-html">slideDown([speed,[easing],[fn]])
+</code></pre>
+<h6 id="422-下滑效果语法规范">4.2.2 下滑效果语法规范</h6>
+<pre><code class="language-html">slideUp([speed,[easing],[fn]])
+</code></pre>
+<h6 id="423-滑动切换效果语法规范">4.2.3 滑动切换效果语法规范</h6>
+<pre><code class="language-html">slideToggle([speed,[easing],[fn]])
+</code></pre>
+<h6 id="424-滑动效果参数">4.2.4 滑动效果参数</h6>
+<blockquote>
+<ol>
+<li>
+<p>参数都可以省略。</p>
+</li>
+<li>
+<p>speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。</p>
+</li>
+<li>
+<p>easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。</p>
+</li>
+<li>
+<p>fn: 回调函数，在动画完成时执行的函数，每个元素执行一次。</p>
+</li>
+</ol>
+</blockquote>
+<h5 id="43-事件切换">4.3 事件切换</h5>
+<pre><code class="language-html">hover([over,]out)
+</code></pre>
+<blockquote>
+<ol>
+<li>
+<p>over:鼠标移到元素上要触发的函数（相当于mouseenter）</p>
+</li>
+<li>
+<p>out:鼠标移出元素要触发的函数（相当于mouseleave）</p>
+</li>
+<li>
+<p>如果只写一个函数，则鼠标经过和离开都会触发它</p>
+</li>
+</ol>
+</blockquote>
+<h5 id="44-动画队列及其停止排队方法">4.4 动画队列及其停止排队方法</h5>
+<h6 id="441-动画或效果队列">4.4.1 动画或效果队列</h6>
+<blockquote>
+<p>动画或者效果一旦触发就会执行，如果多次触发，就造成多个动画或者效果排队执行</p>
+</blockquote>
+<h6 id="442-停止排队">4.4.2 停止排队</h6>
+<pre><code class="language-html">stop()
+</code></pre>
+<blockquote>
+<p>(1）stop() 方法用于停止动画或效果。</p>
+<p>(2) 注意： stop() 写到动画或者效果的前面， 相当于停止结束上一次的动画。</p>
+</blockquote>
+<h5 id="45-淡入淡出效果">4.5 淡入淡出效果</h5>
+<h6 id="451-淡入效果语法规范">4.5.1  淡入效果语法规范</h6>
+<pre><code class="language-html">fadeIn([speed,[easing],[fn]])
+</code></pre>
+<h6 id="452-淡出效果语法规范">4.5.2 淡出效果语法规范</h6>
+<pre><code class="language-html">fadeOut([speed,[easing],[fn]])
+</code></pre>
+<h6 id="453-淡入淡出切换效果语法规范">4.5.3 淡入淡出切换效果语法规范</h6>
+<blockquote>
+<p>1.参数都可以省略。</p>
+<p>2.speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。</p>
+<p>3.easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。</p>
+<p>4.fn: 回调函数，在动画完成时执行的函数，每个元素执行一次。</p>
+</blockquote>
+<h6 id="454-渐进方式调整到指定的不透明度">4.5.4 渐进方式调整到指定的不透明度</h6>
+<pre><code class="language-html">fadeTo([[speed],opacity,[easing],[fn]])
+</code></pre>
+<h6 id="455-效果参数">4.5.5 效果参数</h6>
+<blockquote>
+<p>1.<mark>opacity 透明度必须写，取值 0~1 之间。</mark></p>
+<p>2.<mark>speed</mark>：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。必须写</p>
+<p>3.easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。</p>
+<p>4.fn: 回调函数，在动画完成时执行的函数，每个元素执行一次。</p>
+</blockquote>
+<h5 id="46-自定义动画animate">4.6 自定义动画animate</h5>
+<h6 id="461-语法">4.6.1 语法</h6>
+<pre><code class="language-html">animate(params,[speed],[easing],[fn])
+</code></pre>
+<h6 id="462-参数">4.6.2 参数</h6>
+<blockquote>
+<p>1.<mark>params: 想要更改的样式属性，以对象形式传递，必须写。 属性名可以不用带引号， 如果是复合属性则需要采 取驼峰命名法 borderLeft</mark>。其余参数都可以省略。</p>
+<p>2.speed：三种预定速度之一的字符串(“slow”,“normal”, or “fast”)或表示动画时长的毫秒数值(如：1000)。</p>
+<p>3.easing：(Optional) 用来指定切换效果，默认是“swing”，可用参数“linear”。</p>
+<p>4.fn: 回调函数，在动画完成时执行的函数，每个元素执行一次。</p>
+</blockquote>
+<h4 id="5jquery属性操作">5.jQuery属性操作</h4>
+<h5 id="51-设置或获取元素固有属性值prop">5.1 设置或获取元素固有属性值prop()</h5>
+<blockquote>
+<p>所谓元素固有属性就是元素本身自带的属性，比如 <a> 元素里面的 href ，比如 <input> 元素里面的 type。</p>
+</blockquote>
+<ol>
+<li>
+<p>获取属性语法</p>
+<pre><code class="language-html">prop(&quot;属性&quot;)
+</code></pre>
+</li>
+<li>
+<p>设置属性语法</p>
+<pre><code class="language-html">prop(&quot;属性&quot;,&quot;属性值&quot;)
+</code></pre>
+</li>
+</ol>
+<h5 id="52-设置或获取元素自定义属性值-attr">5.2 设置或获取元素自定义属性值 attr()</h5>
+<blockquote>
+<p>用户自己给元素添加的属性，我们称为自定义属性。 比如给 div 添加 index =“1”。</p>
+</blockquote>
+<ol>
+<li>获取属性语法</li>
+</ol>
+<pre><code class="language-html">attr(''属性'')	// 类似原生 getAttribute()
+</code></pre>
+<ol start="2">
+<li>设置属性语法</li>
+</ol>
+<pre><code class="language-html">attr(''属性'', ''属性值'') // 类似原生 setAttribute()
+</code></pre>
+<h5 id="53-数据缓存data">5.3 数据缓存data()</h5>
+<blockquote>
+<p>data() 方法可以在指定的元素上存取数据，并不会修改DOM 元素结构。一旦页面刷新，之前存放的数据都将被移除。</p>
+</blockquote>
+<ol>
+<li>附加数据语法</li>
+</ol>
+<pre><code class="language-html">data(''name'',''value'') // 向被选元素附加数据
+</code></pre>
+<ol start="2">
+<li>获取数据语法</li>
+</ol>
+<pre><code class="language-html">date(''name'')	// 向被选元素获取数据
+</code></pre>
+<p>同时，还可以读取 HTML5 自定义属性 data-index ，得到的是数字型</p>
+<h4 id="6-jquery-内容文本值">6. jQuery 内容文本值</h4>
+<blockquote>
+<p>主要针对元素的<mark>内容</mark>还有<mark>表单的值</mark>操作。</p>
+</blockquote>
+<h5 id="1-普通元素内容-html-相当于原生inner-html">1. 普通元素内容 html()（ 相当于原生inner HTML)</h5>
+<pre><code class="language-html">html()	// 获取元素的内容
+html(''内容'') // 设置元素的内容
+</code></pre>
+<h5 id="2-普通元素文本内容-text相当与原生-innertext">2.  普通元素文本内容 text()	(相当与原生 innerText)</h5>
+<pre><code class="language-html">text()	// 获取元素的文本内容
+text(''文本内容'') // 设置元素的文本内容
+</code></pre>
+<h5 id="3-表单的值-val-相当于原生value">3.  表单的值 val()（ 相当于原生value)</h5>
+<pre><code class="language-html">val()	// 获取表单的值
+val(''内容'') // 设置表单的值
+</code></pre>
+<h4 id="7-jquery-元素操作">7. jQuery 元素操作</h4>
+<blockquote>
+<p>主要是遍历、创建、添加、删除元素操作。</p>
+</blockquote>
+<h6 id="71-遍历元素">7.1 遍历元素</h6>
+<p>jQuery 隐式迭代是对同一类元素做了同样的操作。 如果想要给同一类元素做不同操作，就需要用到遍历。</p>
+<pre><code class="language-html">$.each(object，function (index, element) { xxx; })
+</code></pre>
+<ol>
+<li>$.each()方法可用于遍历任何对象。主要用于数据处理，比如数组，对象</li>
+</ol>
+<p>2.里面的函数有2个参数： index 是每个元素的索引号; element 遍历内容</p>
+<h5 id="72-创建元素">7.2 创建元素</h5>
+<p>语法:</p>
+<pre><code class="language-html">$(''&lt;li&gt;&lt;/li&gt;'');
+</code></pre>
+<p>动态的创建了一个 <li></p>
+<h5 id="73-添加元素">7.3 添加元素</h5>
+<h6 id="1-内部添加">1. 内部添加</h6>
+<pre><code class="language-html">element.append(''内容'')
+</code></pre>
+<p>把内容放入匹配元素内部最后面，类似原生 appendChild</p>
+<pre><code class="language-html">element.prepend(''内容'')
+</code></pre>
+<p>把内容放入匹配元素内部最前面。</p>
+<h6 id="2-外部添加">2. 外部添加</h6>
+<pre><code class="language-html">element.after(''内容'')	// 把内容放入目标元素后面
+</code></pre>
+<pre><code class="language-html">element.before(''内容'')	// 把内容放入目标元素前面
+</code></pre>
+<p>①  内部添加元素，生成之后，它们是父子关系</p>
+<p>②  外部添加元素，生成之后，他们是兄弟关系</p>
+<h5 id="74-删除元素">7.4 删除元素</h5>
+<pre><code class="language-html">element.remove() // 删除匹配的元素（本身）
+</code></pre>
+<pre><code class="language-html">element.empty()	// 删除匹配的元素集合中所有的子节点
+</code></pre>
+<pre><code class="language-html">element.html('''') // 清空匹配的元素内容
+</code></pre>
+<p>① remove 删除元素本身</p>
+<p>② empt() 和 html('''') 作用等价，都可以删除元素里面的内容，只不过 html 还可以设置内容</p>
+<h4 id="8query-尺寸-位置操作">8.Query 尺寸、位置操作</h4>
+<h5 id="81-jquery尺寸">8.1 jQuery尺寸</h5>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width()/height()</td>
+<td>取得匹配元素宽度和高度值只算width / height</td>
+</tr>
+<tr>
+<td>innerWidth/innerHeight()</td>
+<td>取得匹配元素宽度和高度值包含padding</td>
+</tr>
+<tr>
+<td>outWidth()/outerHeight()</td>
+<td>取得匹配元素宽度和高度值包含padding、border</td>
+</tr>
+<tr>
+<td>outerWidth(true)/outerHeight(true)</td>
+<td>取得匹配元素宽度和高度值包含padding、borde、 margin</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>以上参数为空，则是获取相应值，返回的是数字型</p>
+<p>如果参数为数字，则是修改相应值</p>
+<p>参数可以不必写单位</p>
+</blockquote>
+<h5 id="82-jquery-位置">8.2 	jQuery 位置</h5>
+<blockquote>
+<p>位置主要有三个： offset()、position()、scrollTop()/scrollLeft()</p>
+</blockquote>
+<h6 id="1offset-设置或获取元素偏移">1.offset() 设置或获取元素偏移</h6>
+<ol>
+<li>
+<p>offset() 方法设置或返回被选元素相对于文档的偏移坐标，跟父级没有关系。</p>
+</li>
+<li>
+<p>该方法有2个属性 left、top 。offset().top 用于获取距离文档顶部的距离，offset().left 用于获取距离文档左侧的距离。</p>
+</li>
+<li>
+<p>可以设置元素的偏移：offset({ top: 10, left: 30 })</p>
+</li>
+</ol>
+<h6 id="2position-获取元素偏移">2.position() 获取元素偏移</h6>
+<ol>
+<li>position() 方法用于返回被选元素相对于带有定位的父级偏移坐标，如果父级都没有定位，则以文档为准。</li>
+<li>该方法有2个属性 left、top。position().top 用于获取距离定位父级顶部的距离，position().left 用于获取距离定 位父级左侧的距离。</li>
+<li><mark>该方法只能获取,不能设置偏移</mark></li>
+</ol>
+<h6 id="3-scrolltopscrollleft-设置或获取元素被卷去的头部和左侧">3.  scrollTop()/scrollLeft() 设置或获取元素被卷去的头部和左侧</h6>
+<ol>
+<li>
+<p>scrollTop() 方法设置或返回被选元素被卷去的头部。</p>
+</li>
+<li>
+<p>不跟参数是获取，参数为不带单位的数字则是设置被卷去的头部</p>
+</li>
+</ol>
+<br />
+                                            
+                                </p>
+                            </div>
+                            <div class="post_footer">
+                                
+                                        
+                                            <div class="next-post" style="margin-top: 20px;">
+                                                <div class="next">下一篇</div>
+                                                <a href="https://aoianz.github.io/post/aADdl8O_B/">
+                                                    <h3 class="post-title">
+                                                        利用selenium自动化实现搜索框输入内容
+                                                    </h3>
+                                                </a>
+                                            </div>
+                                            
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div id="comments" class="doc_comments">
+                        
+                          <script type="text/javascript" src="https://unpkg.com/valine@1.4.18/dist/Valine.min.js"></script>
+
+<script>
+    var valine = new Valine();
+    valine.init({
+        el: '#comments',
+        appId: 'jUvrpiYxxXzK3bTWJ83dq24F-gzGzoHsz' ,
+        appKey: 'czGvjYQOfKPd7Yfoawql5GXS',
+        pageSize: 30
+    })
+
+jQuery(document).ready(function($){
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+})
+</script>
+
+                        
+                </div>
+                </div>
+            </div>
+            
+    </div>
+    <div class="footer">
+    
+    <div class="footer_slogan">
+        <!-- I am Aoian,This is my blog~
+Thank you for your visit. -->
+        <img src="https://aoianz.github.io/media/images/footer.svg" alt="追求源于热爱">
+    </div>
+    <div id="back_to_top" class="back_to_top">
+        <span>△</span>
+    </div>
+    
+</div>
+
+<script src="https://aoianz.github.io/media/scripts/util.js"></script>
+<script src="https://myhkw.cn/api/player/1650200704117" id="myhk" key="1650200704117" m="1"></script>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/styles/default.min.css">
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release/build/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <div id="vcomments"></div>
+</body>
+
+</html>
